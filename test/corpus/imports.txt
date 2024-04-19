@@ -1,0 +1,73 @@
+===
+Imports
+===
+
+import a
+import foo
+import foo.bar
+
+---
+
+(source_file
+  (import path: (path (identifier)))
+  (import path: (path (identifier)))
+  (import path: (path (identifier) (identifier))))
+
+===
+Imports with symbols
+===
+
+import foo ()
+import foo (A)
+import foo (A,)
+import foo (A, B)
+import foo (A, B,)
+import foo (self)
+
+---
+
+(source_file
+  (import path: (path (identifier)) symbols: (symbols))
+  (import path: (path (identifier)) symbols: (symbols (constant)))
+  (import path: (path (identifier)) symbols: (symbols (constant)))
+  (import path: (path (identifier)) symbols: (symbols (constant) (constant)))
+  (import path: (path (identifier)) symbols: (symbols (constant) (constant)))
+  (import path: (path (identifier)) symbols: (symbols (self))))
+
+===
+Imports with aliases
+===
+
+import foo (self as alias)
+import foo (A as B)
+import foo (a as b)
+
+---
+
+(source_file
+  (import
+    path: (path (identifier))
+    symbols: (symbols (import_as name: (self) alias: (identifier))))
+  (import
+    path: (path (identifier))
+    symbols: (symbols (import_as name: (constant) alias: (constant))))
+  (import
+    path: (path (identifier))
+    symbols: (symbols (import_as name: (identifier) alias: (identifier)))))
+
+===
+Conditional imports
+===
+
+import foo if tag1
+import foo if tag1 and tag2
+
+---
+
+(source_file
+  (import
+    path: (path (identifier))
+    tags: (tags (identifier)))
+  (import
+    path: (path (identifier))
+    tags: (tags (identifier) (identifier))))

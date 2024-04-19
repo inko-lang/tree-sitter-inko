@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tree-sitter-inko"
+description = "Inko grammar for tree-sitter"
+version = "0.0.1"
+keywords = ["incremental", "parsing", "tree-sitter", "inko"]
+classifiers = [
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MPL-2.0 License",
+  "Topic :: Software Development :: Compilers",
+  "Topic :: Text Processing :: Linguistic",
+  "Typing :: Typed"
+]
+requires-python = ">=3.8"
+license.text = "MPL-2.0"
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/inko-lang/tree-sitter-inko"
+
+[project.optional-dependencies]
+core = ["tree-sitter~=0.21"]
+
+[tool.cibuildwheel]
+build = "cp38-*"
+build-frontend = "build"

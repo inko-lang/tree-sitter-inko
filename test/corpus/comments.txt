@@ -1,0 +1,10 @@
+===
+Comments
+===
+
+# foo
+
+---
+
+(source_file
+  (comment))

@@ -1,0 +1,44 @@
+===
+Module methods
+===
+
+fn example {}
+fn example() {}
+fn example(a: A) {}
+fn example(a: A, b: B) {}
+fn example(a: A[A]) {}
+fn example(a: A[A, B]) {}
+
+---
+
+(source_file
+  (method name: (identifier) body: (block))
+  (method name: (identifier) arguments: (arguments) body: (block))
+  (method
+    name: (identifier)
+    arguments: (arguments (argument name: (identifier) type: (type)))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments: (arguments
+      (argument name: (identifier) type: (type))
+      (argument name: (identifier) type: (type)))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments: (arguments
+      (argument
+        name: (identifier)
+        type: (generic_type
+          name: (constant)
+          arguments: (type_arguments (type)))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments: (arguments
+      (argument
+        name: (identifier)
+        type: (generic_type
+          name: (constant)
+          arguments: (type_arguments (type) (type)))))
+    body: (block)))
