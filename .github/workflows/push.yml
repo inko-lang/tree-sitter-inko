@@ -10,6 +10,7 @@ on:
       - test/**
       - bindings/**
       - binding.gyp
+      - .github/**
   pull_request:
     paths:
       - grammar.js
@@ -17,6 +18,7 @@ on:
       - test/**
       - bindings/**
       - binding.gyp
+      - .github/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
