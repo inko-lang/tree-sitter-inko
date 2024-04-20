@@ -26,9 +26,9 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => repeat($._top_level),
-
     _top_level: $ => choice($.import, alias($.module_method, $.method)),
 
+    // Imports
     import: $ => seq(
       'import',
       field('path', $.path),
@@ -45,7 +45,7 @@ module.exports = grammar({
     ),
     tags: $ => seq('if', list($.identifier, 'and', false)),
 
-    // TODO: type parameters
+    // Methods
     module_method: $ => seq(
       'fn',
       field('name', $.identifier),
@@ -58,23 +58,36 @@ module.exports = grammar({
       ':',
       field('type', $._type),
     ),
+    _returns: $ => seq('->', $._type),
 
-    // TODO: closure types
-    // TODO: Never type
-    // TODO: ownership
+    // Type signatures
     _type: $ => choice(
       $.generic_type,
       alias($.constant, $.type),
+      $.ref_type,
+      $.mut_type,
+      $.uni_type,
+      $.fn_type,
     ),
     generic_type: $ => seq(
       field('name', $.constant),
       field('arguments', $.type_arguments),
     ),
     type_arguments: $ => seq('[', comma_list($._type), ']'),
+    ref_type: $ => seq('ref', field('type', $._type)),
+    mut_type: $ => seq('mut', field('type', $._type)),
+    uni_type: $ => seq('uni', field('type', $._type)),
+    fn_type: $ => seq(
+      'fn',
+      field('arguments', optional(alias($.fn_type_arguments, $.arguments))),
+      field('returns', optional($._returns)),
+    ),
+    fn_type_arguments: $ => seq('(', comma_list($._type), ')'),
 
     // TODO: add expressions
     block: $ => seq('{', '}'),
 
+    // Various terminals (e.g. identifiers)
     self: _ => 'self',
     comment: _ => token(seq('#', /.*/)),
     identifier: _ => /([a-z]|_)[a-zA-Z0-9_]*/,

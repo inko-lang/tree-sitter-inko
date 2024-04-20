@@ -8,6 +8,16 @@ fn example(a: A) {}
 fn example(a: A, b: B) {}
 fn example(a: A[A]) {}
 fn example(a: A[A, B]) {}
+fn example(a: Never) {}
+fn example(a: ref A) {}
+fn example(a: mut A) {}
+fn example(a: uni A) {}
+fn example(a: fn) {}
+fn example(a: fn -> C) {}
+fn example(a: fn (A, B) -> C) {}
+fn example(a: ref fn) {}
+fn example(a: mut fn) {}
+fn example(a: uni fn) {}
 
 ---
 
@@ -41,4 +51,56 @@ fn example(a: A[A, B]) {}
         type: (generic_type
           name: (constant)
           arguments: (type_arguments (type) (type)))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments: (arguments (argument name: (identifier) type: (type)))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments: (arguments
+      (argument name: (identifier) type: (ref_type type: (type))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments (argument name: (identifier) type: (mut_type type: (type))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments (argument name: (identifier) type: (uni_type type: (type))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments (argument name: (identifier) type: (fn_type)))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments (argument name: (identifier) type: (fn_type returns: (type))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments
+        (argument
+          name: (identifier)
+          type: (fn_type arguments: (arguments (type) (type)) returns: (type))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments (argument name: (identifier) type: (ref_type type: (fn_type))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments (argument name: (identifier) type: (mut_type type: (fn_type))))
+    body: (block))
+  (method
+    name: (identifier)
+    arguments:
+      (arguments (argument name: (identifier) type: (uni_type type: (fn_type))))
     body: (block)))
