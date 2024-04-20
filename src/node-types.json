@@ -74,6 +74,10 @@
           "named": true
         },
         {
+          "type": "rest_argument",
+          "named": true
+        },
+        {
           "type": "type",
           "named": true
         },
@@ -88,6 +92,86 @@
     "type": "block",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "external_function",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "returns": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": "fn_type",
+            "named": true
+          },
+          {
+            "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "mut_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          },
+          {
+            "type": "uni_type",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "public",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "fn_type",
@@ -244,7 +328,7 @@
     }
   },
   {
-    "type": "method",
+    "type": "module_method",
     "named": true,
     "fields": {
       "arguments": {
@@ -276,8 +360,67 @@
             "named": true
           }
         ]
+      },
+      "returns": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "->",
+            "named": false
+          },
+          {
+            "type": "fn_type",
+            "named": true
+          },
+          {
+            "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "mut_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          },
+          {
+            "type": "uni_type",
+            "named": true
+          }
+        ]
+      },
+      "type_parameters": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_parameters",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "public",
+            "named": true
+          }
+        ]
       }
     }
+  },
+  {
+    "type": "mut",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "mut_type",
@@ -367,6 +510,34 @@
     }
   },
   {
+    "type": "requirements",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "generic_type",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rest_argument",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -375,11 +546,15 @@
       "required": false,
       "types": [
         {
+          "type": "external_function",
+          "named": true
+        },
+        {
           "type": "import",
           "named": true
         },
         {
-          "type": "method",
+          "type": "module_method",
           "named": true
         }
       ]
@@ -463,6 +638,47 @@
     }
   },
   {
+    "type": "type_parameter",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "requirements": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "requirements",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "type_parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "type_parameter",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "uni_type",
     "named": true,
     "fields": {
@@ -507,6 +723,10 @@
     "named": false
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
     "named": false
   },
@@ -516,6 +736,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": "...",
     "named": false
   },
   {
@@ -547,6 +771,10 @@
     "named": true
   },
   {
+    "type": "extern",
+    "named": false
+  },
+  {
     "type": "fn",
     "named": false
   },
@@ -565,6 +793,10 @@
   {
     "type": "mut",
     "named": false
+  },
+  {
+    "type": "public",
+    "named": true
   },
   {
     "type": "ref",

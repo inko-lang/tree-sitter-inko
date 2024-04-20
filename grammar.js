@@ -18,7 +18,7 @@ function import_as(rule, alias) {
 
 module.exports = grammar({
   name: 'inko',
-
+  word: $ => $.identifier,
   extras: $ => [
     $.comment,
     /\s/,
@@ -26,7 +26,11 @@ module.exports = grammar({
 
   rules: {
     source_file: $ => repeat($._top_level),
-    _top_level: $ => choice($.import, alias($.module_method, $.method)),
+    _top_level: $ => choice(
+      $.import,
+      $.external_function,
+      $.module_method,
+    ),
 
     // Imports
     import: $ => seq(
@@ -46,10 +50,28 @@ module.exports = grammar({
     tags: $ => seq('if', list($.identifier, 'and', false)),
 
     // Methods
+    external_function: $ => seq(
+      'fn',
+      field('visibility', optional($.public)),
+      'extern',
+      field('name', $.identifier),
+      field('arguments', optional(alias($.extern_arguments, $.arguments))),
+      field('returns', optional($._returns)),
+      field('body', optional($.block)),
+    ),
+    extern_arguments: $ => seq(
+      '(',
+      optional(seq($.argument, repeat(seq(',', $.argument)))),
+      optional(choice(seq(','), seq(',', $.rest_argument, optional(',')))),
+      ')'
+    ),
     module_method: $ => seq(
       'fn',
+      field('visibility', optional($.public)),
       field('name', $.identifier),
+      field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
+      field('returns', optional($._returns)),
       field('body', $.block),
     ),
     method_arguments: $ => seq('(', comma_list($.argument), ')'),
@@ -58,7 +80,27 @@ module.exports = grammar({
       ':',
       field('type', $._type),
     ),
+    rest_argument: _ => seq('...'),
     _returns: $ => seq('->', $._type),
+    type_parameters: $ => seq('[', comma_list($.type_parameter), ']'),
+    type_parameter: $ => seq(
+      field('name', $.constant),
+      field(
+        'requirements',
+        optional(alias($.type_parameter_requirements, $.requirements))
+      ),
+    ),
+    type_parameter_requirements: $ => seq(
+      ':',
+      list($._type_parameter_requirement, '+', false),
+    ),
+    _type_parameter_requirement: $ => choice(
+      alias($.mutable_requirement, $.mut),
+      $.generic_type,
+      alias($.constant, $.type),
+    ),
+    mutable_requirement: _ => 'mut',
+    public: _ => 'pub',
 
     // Type signatures
     _type: $ => choice(

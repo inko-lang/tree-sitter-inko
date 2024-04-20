@@ -18,23 +18,29 @@ fn example(a: fn (A, B) -> C) {}
 fn example(a: ref fn) {}
 fn example(a: mut fn) {}
 fn example(a: uni fn) {}
+fn example -> A {}
+fn example[A] {}
+fn example[A, B] {}
+fn example[A: B + C + mut + D[A]] {}
+fn example[A](a: A) -> A {}
+fn pub example {}
 
 ---
 
 (source_file
-  (method name: (identifier) body: (block))
-  (method name: (identifier) arguments: (arguments) body: (block))
-  (method
+  (module_method name: (identifier) body: (block))
+  (module_method name: (identifier) arguments: (arguments) body: (block))
+  (module_method
     name: (identifier)
     arguments: (arguments (argument name: (identifier) type: (type)))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments: (arguments
       (argument name: (identifier) type: (type))
       (argument name: (identifier) type: (type)))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments: (arguments
       (argument
@@ -43,7 +49,7 @@ fn example(a: uni fn) {}
           name: (constant)
           arguments: (type_arguments (type)))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments: (arguments
       (argument
@@ -52,36 +58,36 @@ fn example(a: uni fn) {}
           name: (constant)
           arguments: (type_arguments (type) (type)))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments: (arguments (argument name: (identifier) type: (type)))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments: (arguments
       (argument name: (identifier) type: (ref_type type: (type))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (mut_type type: (type))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (uni_type type: (type))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (fn_type)))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (fn_type returns: (type))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments
@@ -89,18 +95,85 @@ fn example(a: uni fn) {}
           name: (identifier)
           type: (fn_type arguments: (arguments (type) (type)) returns: (type))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (ref_type type: (fn_type))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (mut_type type: (fn_type))))
     body: (block))
-  (method
+  (module_method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (uni_type type: (fn_type))))
+    body: (block))
+  (module_method name: (identifier) returns: (type) body: (block))
+  (module_method
+    name: (identifier)
+    type_parameters: (type_parameters (type_parameter name: (constant)))
+    body: (block))
+  (module_method
+    name: (identifier)
+    type_parameters: (type_parameters
+      (type_parameter name: (constant)) (type_parameter name: (constant)))
+    body: (block))
+  (module_method
+    name: (identifier)
+    type_parameters: (type_parameters
+      (type_parameter
+        name: (constant)
+        requirements: (requirements
+          (type)
+          (type)
+          (mut)
+          (generic_type name: (constant) arguments: (type_arguments (type))))))
+    body: (block))
+  (module_method
+    name: (identifier)
+    type_parameters: (type_parameters (type_parameter name: (constant)))
+    arguments: (arguments (argument name: (identifier) type: (type)))
+    returns: (type)
+    body: (block))
+  (module_method
+    visibility: (public)
+    name: (identifier)
     body: (block)))
+
+===
+External functions
+===
+
+fn extern example
+fn pub extern example
+fn extern example(a: A) -> A
+fn extern example(a: A) -> A {}
+fn extern example(a: A, ...)
+fn extern example(a: A, ...,)
+
+---
+
+(source_file
+  (external_function name: (identifier))
+  (external_function visibility: (public) name: (identifier))
+  (external_function
+    name: (identifier)
+    arguments: (arguments (argument name: (identifier) type: (type)))
+    returns: (type))
+  (external_function
+    name: (identifier)
+    arguments: (arguments (argument name: (identifier) type: (type)))
+    returns: (type)
+    body: (block))
+  (external_function
+    name: (identifier)
+    arguments: (arguments
+      (argument name: (identifier) type: (type))
+      (rest_argument)))
+  (external_function
+    name: (identifier)
+    arguments: (arguments
+      (argument name: (identifier) type: (type))
+      (rest_argument))))
