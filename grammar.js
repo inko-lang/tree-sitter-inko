@@ -30,6 +30,7 @@ module.exports = grammar({
       $.import,
       $.external_function,
       $.module_method,
+      $.class,
     ),
 
     // Imports
@@ -101,6 +102,16 @@ module.exports = grammar({
     ),
     mutable_requirement: _ => 'mut',
     public: _ => 'pub',
+
+    // Classes
+    // TODO: modifiers
+    // TODO: type parameters
+    class: $ => seq(
+      'class',
+      field('name', $.constant),
+      field('body', $.class_body),
+    ),
+    class_body: $ => seq('{', '}'),
 
     // Type signatures
     _type: $ => choice(

@@ -23,6 +23,10 @@
         {
           "type": "SYMBOL",
           "name": "module_method"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "class"
         }
       ]
     },
@@ -866,6 +870,44 @@
     "public": {
       "type": "STRING",
       "value": "pub"
+    },
+    "class": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "class"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "constant"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "class_body"
+          }
+        }
+      ]
+    },
+    "class_body": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
     },
     "_type": {
       "type": "CHOICE",

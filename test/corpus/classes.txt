@@ -1,0 +1,10 @@
+===
+Classes
+===
+
+class A {}
+
+----
+
+(source_file
+  (class name: (constant) body: (class_body)))

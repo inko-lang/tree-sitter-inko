@@ -94,6 +94,37 @@
     "fields": {}
   },
   {
+    "type": "class",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "class_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "class_body",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "external_function",
     "named": true,
     "fields": {
@@ -546,6 +577,10 @@
       "required": false,
       "types": [
         {
+          "type": "class",
+          "named": true
+        },
+        {
           "type": "external_function",
           "named": true
         },
@@ -760,6 +795,10 @@
   },
   {
     "type": "as",
+    "named": false
+  },
+  {
+    "type": "class",
     "named": false
   },
   {
