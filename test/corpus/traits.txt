@@ -1,0 +1,82 @@
+===
+Traits
+===
+
+trait A {}
+trait pub A {}
+trait A[A] {}
+trait A[A: B + C + mut + D[A], C] {}
+trait A {
+  # test
+}
+trait A: B + C[A] {}
+
+---
+
+(source_file
+  (trait name: (constant) body: (trait_body))
+  (trait visibility: (visibility) name: (constant) body: (trait_body))
+  (trait
+    name: (constant)
+    type_parameters: (type_parameters (type_parameter name: (constant)))
+    body: (trait_body))
+  (trait
+    name: (constant)
+    type_parameters: (type_parameters
+      (type_parameter
+        name: (constant)
+        requirements: (requirements
+          (type)
+          (type)
+          (mut)
+          (generic_type name: (constant) arguments: (type_arguments (type)))))
+      (type_parameter name: (constant)))
+    body: (trait_body))
+  (trait name: (constant) body: (trait_body (line_comment)))
+  (trait
+    name: (constant)
+    requirements: (required_traits
+      (type)
+      (generic_type name: (constant) arguments: (type_arguments (type))))
+    body: (trait_body)))
+
+===
+Trait methods
+===
+
+trait A {
+  fn example
+  fn example {}
+  fn pub example {}
+  fn pub move example {}
+  fn example[A: B + C + mut + D[A]] {}
+}
+
+---
+
+(source_file
+  (trait
+    name: (constant)
+    body: (trait_body
+      (method name: (identifier))
+      (method name: (identifier) body: (block))
+      (method
+        visibility: (visibility)
+        name: (identifier)
+        body: (block))
+      (method
+        visibility: (visibility)
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        name: (identifier)
+        type_parameters: (type_parameters
+          (type_parameter
+            name: (constant)
+            requirements: (requirements
+              (type)
+              (type)
+              (mut)
+              (generic_type name: (constant) arguments: (type_arguments (type))))))
+        body: (block)))))

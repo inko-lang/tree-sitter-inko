@@ -3,8 +3,132 @@ Classes
 ===
 
 class A {}
+class pub A {}
+class async A {}
+class builtin A {}
+class enum A {}
+class pub async A {}
+class A[A] {}
+class A[A: B + C + mut + D[A], C] {}
+class A {
+  # test
+}
 
 ----
 
 (source_file
-  (class name: (constant) body: (class_body)))
+  (class name: (constant) body: (class_body))
+  (class visibility: (visibility) name: (constant) body: (class_body))
+  (class modifier: (modifier) name: (constant) body: (class_body))
+  (class modifier: (modifier) name: (constant) body: (class_body))
+  (class modifier: (modifier) name: (constant) body: (class_body))
+  (class
+    visibility: (visibility)
+    modifier: (modifier)
+    name: (constant)
+    body: (class_body))
+  (class
+    name: (constant)
+    type_parameters: (type_parameters (type_parameter name: (constant)))
+    body: (class_body))
+  (class
+    name: (constant)
+    type_parameters: (type_parameters
+      (type_parameter
+        name: (constant)
+        requirements: (requirements
+          (type)
+          (type)
+          (mut)
+          (generic_type name: (constant) arguments: (type_arguments (type)))))
+      (type_parameter name: (constant)))
+    body: (class_body))
+  (class name: (constant) body: (class_body (line_comment))))
+
+===
+Classes with fields
+===
+
+class A {
+  let @a: A
+  let @b: B
+}
+
+---
+
+(source_file
+  (class
+    name: (constant)
+    body: (class_body
+      (field name: (field_name) type: (type))
+      (field name: (field_name) type: (type)))))
+
+===
+Classes with methods
+===
+
+class A {
+  fn example {}
+  fn pub example {}
+  fn pub static example {}
+  fn pub async example {}
+  fn pub async mut example {}
+  fn pub move example {}
+  fn example[A: B + C + mut + D[A]] {}
+}
+
+---
+
+(source_file
+  (class
+    name: (constant)
+    body: (class_body
+      (method name: (identifier) body: (block))
+      (method visibility: (visibility) name: (identifier) body: (block))
+      (method
+        visibility: (visibility)
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        visibility: (visibility)
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        visibility: (visibility)
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        visibility: (visibility)
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        name: (identifier)
+        type_parameters: (type_parameters
+          (type_parameter
+            name: (constant)
+            requirements: (requirements
+              (type)
+              (type)
+              (mut)
+              (generic_type name: (constant) arguments: (type_arguments (type))))))
+        body: (block)))))
+
+===
+Classes with cases
+===
+
+class A {
+  case A
+  case B(A, B,)
+}
+
+---
+
+(source_file
+  (class name: (constant) body: (class_body
+    (case name: (constant))
+    (case name: (constant) arguments: (arguments (type) (type))))))

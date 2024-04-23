@@ -1,0 +1,42 @@
+===
+Implementations
+===
+
+impl A {}
+impl A for B {}
+impl A for B if A: B + mut, B: C {}
+impl A {
+  fn example {}
+  fn mut example {}
+}
+impl A for B {
+  fn example {}
+  fn mut example {}
+}
+
+---
+
+(source_file
+  (reopen_class name: (constant) body: (reopen_class_body))
+  (implement_trait
+    trait: (type)
+    class: (constant)
+    body: (implement_trait_body))
+  (implement_trait
+    trait: (type)
+    class: (constant)
+    bounds: (bounds
+      (bound name: (constant) requirements: (requirements (type) (mut)))
+      (bound name: (constant) requirements: (requirements (type))))
+    body: (implement_trait_body))
+  (reopen_class
+    name: (constant)
+    body: (reopen_class_body
+      (method name: (identifier) body: (block))
+      (method modifier: (modifier) name: (identifier) body: (block))))
+  (implement_trait
+    trait: (type)
+    class: (constant)
+    body: (implement_trait_body
+      (method name: (identifier) body: (block))
+      (method modifier: (modifier) name: (identifier) body: (block)))))

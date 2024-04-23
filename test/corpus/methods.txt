@@ -138,7 +138,7 @@ fn pub example {}
     returns: (type)
     body: (block))
   (module_method
-    visibility: (public)
+    visibility: (visibility)
     name: (identifier)
     body: (block)))
 
@@ -157,7 +157,7 @@ fn extern example(a: A, ...,)
 
 (source_file
   (external_function name: (identifier))
-  (external_function visibility: (public) name: (identifier))
+  (external_function visibility: (visibility) name: (identifier))
   (external_function
     name: (identifier)
     arguments: (arguments (argument name: (identifier) type: (type)))

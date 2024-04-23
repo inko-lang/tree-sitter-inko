@@ -7,4 +7,4 @@ Comments
 ---
 
 (source_file
-  (comment))
+  (line_comment))
