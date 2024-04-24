@@ -6,10 +6,10 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "_top_level"
+        "name": "_root"
       }
     },
-    "_top_level": {
+    "_root": {
       "type": "CHOICE",
       "members": [
         {
@@ -43,6 +43,10 @@
         {
           "type": "SYMBOL",
           "name": "reopen_class"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
         }
       ]
     },
@@ -2182,10 +2186,38 @@
           "value": "{"
         },
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        },
+        {
           "type": "STRING",
           "value": "}"
         }
       ]
+    },
+    "_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "float"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "integer"
+        }
+      ]
+    },
+    "float": {
+      "type": "PATTERN",
+      "value": "-?\\d[\\d_]*((e|E)(\\+|-)?|\\.)[\\d_]+"
+    },
+    "integer": {
+      "type": "PATTERN",
+      "value": "-?(0x[\\da-fA-F_]+|\\d[\\d_]*)"
     },
     "self": {
       "type": "STRING",
@@ -2209,15 +2241,15 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "([a-z]|_)[a-zA-Z0-9_]*"
+      "value": "([a-z]|_)[a-zA-Z\\d_]*"
     },
     "field_name": {
       "type": "PATTERN",
-      "value": "@[a-zA-Z0-9_]+"
+      "value": "@[a-zA-Z\\d_]+"
     },
     "constant": {
       "type": "PATTERN",
-      "value": "[A-Z][a-zA-Z0-9_]*"
+      "value": "[A-Z][a-zA-Z\\d_]*"
     }
   },
   "extras": [

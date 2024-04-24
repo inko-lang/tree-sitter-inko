@@ -1,0 +1,30 @@
+===
+Integers
+===
+
+100
+1_0_0
+0xab
+0xAB
+0xA_B
+-100
+
+---
+
+(source_file (integer) (integer) (integer) (integer) (integer) (integer))
+
+===
+Floats
+===
+
+1.2
+100.200
+1.1_2
+-1.2
+1e2
+1e+2
+1E+2
+
+---
+
+(source_file (float) (float) (float) (float) (float) (float) (float))

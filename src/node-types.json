@@ -91,7 +91,21 @@
   {
     "type": "block",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "bound",
@@ -1006,11 +1020,19 @@
           "named": true
         },
         {
+          "type": "float",
+          "named": true
+        },
+        {
           "type": "implement_trait",
           "named": true
         },
         {
           "type": "import",
+          "named": true
+        },
+        {
+          "type": "integer",
           "named": true
         },
         {
@@ -1342,6 +1364,10 @@
     "named": true
   },
   {
+    "type": "float",
+    "named": true
+  },
+  {
     "type": "fn",
     "named": false
   },
@@ -1364,6 +1390,10 @@
   {
     "type": "import",
     "named": false
+  },
+  {
+    "type": "integer",
+    "named": true
   },
   {
     "type": "let",

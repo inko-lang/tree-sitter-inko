@@ -25,8 +25,8 @@ module.exports = grammar({
   ],
 
   rules: {
-    source_file: $ => repeat($._top_level),
-    _top_level: $ => choice(
+    source_file: $ => repeat($._root),
+    _root: $ => choice(
       $.extern_import,
       $.import,
       $.external_function,
@@ -35,6 +35,7 @@ module.exports = grammar({
       $.trait,
       $.implement_trait,
       $.reopen_class,
+      $._expression,
     ),
 
     // Imports
@@ -244,14 +245,20 @@ module.exports = grammar({
     ),
     fn_type_arguments: $ => seq('(', comma_list($._type), ')'),
 
-    // TODO: add expressions
-    block: $ => seq('{', '}'),
+    // Expressions
+    block: $ => seq('{', repeat($._expression), '}'),
+    _expression: $ => choice(
+      $.float,
+      $.integer,
+    ),
+    float: _ => /-?\d[\d_]*((e|E)(\+|-)?|\.)[\d_]+/,
+    integer: _ => /-?(0x[\da-fA-F_]+|\d[\d_]*)/,
 
     // Various terminals (e.g. identifiers)
     self: _ => 'self',
     line_comment: _ => token(seq('#', /.*/)),
-    identifier: _ => /([a-z]|_)[a-zA-Z0-9_]*/,
-    field_name: _ => /@[a-zA-Z0-9_]+/,
-    constant: _ => /[A-Z][a-zA-Z0-9_]*/
+    identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
+    field_name: _ => /@[a-zA-Z\d_]+/,
+    constant: _ => /[A-Z][a-zA-Z\d_]*/
   }
 });
