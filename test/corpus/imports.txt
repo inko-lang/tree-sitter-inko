@@ -71,3 +71,16 @@ import foo if tag1 and tag2
   (import
     path: (path (identifier))
     tags: (tags (identifier) (identifier))))
+
+===
+Extern imports
+===
+
+import extern "c"
+import extern "c" if tag1 and tag2
+
+---
+
+(source_file
+  (extern_import path: (path))
+  (extern_import path: (path) tags: (tags (identifier) (identifier))))

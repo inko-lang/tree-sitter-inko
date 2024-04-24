@@ -14,6 +14,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "extern_import"
+        },
+        {
+          "type": "SYMBOL",
           "name": "import"
         },
         {
@@ -329,6 +333,65 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "extern_import": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "import"
+        },
+        {
+          "type": "STRING",
+          "value": "extern"
+        },
+        {
+          "type": "FIELD",
+          "name": "path",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "extern_import_path"
+            },
+            "named": true,
+            "value": "path"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "tags",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "tags"
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "extern_import_path": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\"]*"
+        },
+        {
+          "type": "STRING",
+          "value": "\""
         }
       ]
     },

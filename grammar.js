@@ -27,6 +27,7 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat($._top_level),
     _top_level: $ => choice(
+      $.extern_import,
       $.import,
       $.external_function,
       $.module_method,
@@ -52,6 +53,13 @@ module.exports = grammar({
       import_as($.constant, $.constant),
     ),
     tags: $ => seq('if', list($.identifier, 'and', false)),
+    extern_import: $ => seq(
+      'import',
+      'extern',
+      field('path', alias($.extern_import_path, $.path)),
+      field('tags', optional($.tags)),
+    ),
+    extern_import_path: $ => seq('"', /[^"]*/, '"'),
 
     // Methods
     external_function: $ => seq(
