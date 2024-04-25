@@ -1,4 +1,4 @@
-; Brackets
+; Brackets and operators
 [
   "("
   ")"
@@ -8,35 +8,57 @@
   "}"
 ] @punctuation.bracket
 
+[
+  "+"
+  "-"
+  "/"
+  "*"
+  "**"
+  "%"
+  "<"
+  ">"
+  "<="
+  ">="
+  "<<"
+  ">>"
+  ">>>"
+  "&"
+  "|"
+  "^"
+  "=="
+  "!="
+] @operator
+
 ; Keywords
 [
-  ;"as"
-  "fn"
-  "if"
-  ;"or"
   "and"
-  "for"
-  "let"
-  "ref"
-  ;"try"
-  "mut"
-  "uni"
-  ;"else"
-  "impl"
-  ;"loop"
-  ;"next"
-  ;"move"
+  "as"
   "case"
-  "enum"
   "class"
-  ;"break"
-  ;"match"
-  ;"throw"
-  "trait"
-  ;"while"
+  "enum"
+  "extern"
+  "fn"
+  "for"
+  "if"
+  "impl"
   "import"
-  ;"return"
+  "let"
+  "mut"
+  "ref"
+  "trait"
+  "uni"
+  ;"break"
+  ;"else"
+  ;"loop"
+  ;"match"
+  ;"move"
+  ;"next"
+  ;"or"
   ;"recover"
+  ;"return"
+  ;"throw"
+  ;"try"
+  ;"while"
   (modifier)
   (visibility)
 ] @keyword
@@ -83,3 +105,7 @@
 (implement_trait class: _ @type)
 (reopen_class name: _ @type)
 (bound name: _ @type)
+
+; Methods
+(method name: _ @function)
+(external_function name: _ @function)

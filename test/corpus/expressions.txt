@@ -224,6 +224,114 @@ let a = 1 + 2
 (source_file
   (define_variable name: (identifier) value: (integer))
   (define_variable name: (identifier) type: (type) value: (integer))
-  (define_variable modifier: (mutable) name: (identifier) value: (integer))
+  (define_variable modifier: (modifier) name: (identifier) value: (integer))
   (define_variable
     name: (identifier) value: (binary left: (integer) right: (integer))))
+
+===
+Grouped expressions
+===
+
+(1)
+(1 + 2)
+1 + (2 and 3)
+
+---
+
+(source_file
+  (grouped_expression (integer))
+  (grouped_expression (binary (integer) (integer)))
+  (binary (integer) (grouped_expression (binary (integer) (integer)))))
+
+===
+Tuples
+===
+
+(1,)
+(1,2)
+(1,2,3)
+(1,2,3,)
+
+---
+
+(source_file
+  (tuple (integer))
+  (tuple (integer) (integer))
+  (tuple (integer) (integer) (integer))
+  (tuple (integer) (integer) (integer)))
+
+===
+Arrays
+===
+
+[]
+[10]
+[10,20]
+[10,20,]
+
+---
+
+(source_file
+  (array)
+  (array (integer))
+  (array (integer) (integer))
+  (array (integer) (integer)))
+
+===
+Control flow expressions
+===
+
+break
+return
+10
+return 10
+return    10
+next
+try 10
+
+---
+
+(source_file
+  (break)
+  (return)
+  (integer)
+  (return (integer))
+  (return (integer))
+  (next)
+  (try (integer)))
+
+===
+Closures
+===
+
+fn {}
+fn { 10 }
+fn -> Int {}
+fn (a) {}
+fn (a: A) {}
+fn (a: A, b: B) {}
+fn (a: A, b: B) -> C {}
+fn move {}
+
+---
+
+(source_file
+  (closure body: (block))
+  (closure body: (block (integer)))
+  (closure returns: (type) body: (block))
+  (closure arguments: (arguments (argument name: (identifier))) body: (block))
+  (closure
+    arguments: (arguments (argument name: (identifier) type: (type)))
+    body: (block))
+  (closure
+    arguments: (arguments
+      (argument name: (identifier) type: (type))
+      (argument name: (identifier) type: (type)))
+    body: (block))
+  (closure
+    arguments: (arguments
+      (argument name: (identifier) type: (type))
+      (argument name: (identifier) type: (type)))
+    returns: (type)
+    body: (block))
+  (closure modifier: (modifier) body: (block)))

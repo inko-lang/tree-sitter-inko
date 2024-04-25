@@ -30,7 +30,7 @@ module.exports = grammar({
       $.extern_import,
       $.import,
       $.external_function,
-      $.module_method,
+      alias($.module_method, $.method),
       $.class,
       $.trait,
       $.implement_trait,
@@ -40,11 +40,13 @@ module.exports = grammar({
     ),
 
     // Imports
-    import: $ => seq(
-      'import',
-      field('path', $.path),
-      field('symbols', optional($.symbols)),
-      field('tags', optional($.tags)),
+    import: $ => prec.right(
+      seq(
+        'import',
+        field('path', $.path),
+        field('symbols', optional($.symbols)),
+        field('tags', optional($.tags)),
+      )
     ),
     path: $ => seq($.identifier, repeat(seq('.', $.identifier))),
     symbols: $ => seq(
@@ -121,8 +123,6 @@ module.exports = grammar({
       $.generic_type,
       alias($.constant, $.type),
     ),
-    mutable: _ => 'mut',
-    visibility: _ => 'pub',
     _method_modifier: _ => choice(
       'mut',
       'move',
@@ -232,8 +232,8 @@ module.exports = grammar({
 
     // Type signatures
     _type: $ => choice(
-      $.generic_type,
-      alias($.constant, $.type),
+      prec.left($.generic_type),
+      prec.left(alias($.constant, $.type)),
       $.ref_type,
       $.mut_type,
       $.uni_type,
@@ -248,10 +248,12 @@ module.exports = grammar({
     ref_type: $ => seq('ref', field('type', $._type)),
     mut_type: $ => seq('mut', field('type', $._type)),
     uni_type: $ => seq('uni', field('type', $._type)),
-    fn_type: $ => seq(
-      'fn',
-      field('arguments', optional(alias($.fn_type_arguments, $.arguments))),
-      field('returns', optional($._returns)),
+    fn_type: $ => prec.right(
+      seq(
+        'fn',
+        field('arguments', optional(alias($.fn_type_arguments, $.arguments))),
+        field('returns', optional($._returns)),
+      )
     ),
     fn_type_arguments: $ => seq('(', comma_list($._type), ')'),
     tuple_type: $ => seq('(', comma_list($._type), ')'),
@@ -273,9 +275,47 @@ module.exports = grammar({
       alias($.and_or, $.binary),
       $.cast,
       $.binary,
+      $.grouped_expression,
+      $.tuple,
+      $.array,
+      $.break,
+      $.return,
+      $.next,
+      $.try,
+      $.closure,
+    ),
+    grouped_expression: $ => seq('(', $._expression ,')'),
+
+    // Sequences
+    tuple: $ => seq('(', $._expression, ',', comma_list($._expression), ')'),
+    array: $ => seq('[', comma_list($._expression), ']'),
+
+    // Control flow
+    return: $ => seq(
+      'return',
+      optional(seq(token.immediate(/[ \t]+/), $._expression)),
+    ),
+    try: $ => seq('try', $._expression),
+
+    // Closures
+    closure: $ => seq(
+      'fn',
+      field('modifier', optional(alias($.move, $.modifier))),
+      field('arguments', optional(alias($.closure_arguments, $.arguments))),
+      field('returns', optional($._returns)),
+      field('body', $.block),
+    ),
+    closure_arguments: $ => seq(
+      '(',
+      comma_list(alias($.closure_argument, $.argument)),
+      ')'
+    ),
+    closure_argument: $ => seq(
+      field('name', $.identifier),
+      optional(seq(':', field('type', $._type))),
     ),
 
-    // Constant definitions
+    // let definitions
     define_constant: $ => seq(
       'let',
       field('name', $.constant),
@@ -286,7 +326,7 @@ module.exports = grammar({
       0,
       seq(
         'let',
-        field('modifier', optional($.mutable)),
+        field('modifier', optional(alias($.mutable, $.modifier))),
         field('name', $.identifier),
         field('type', optional(seq(':', $._type))),
         '=',
@@ -294,7 +334,7 @@ module.exports = grammar({
       ),
     ),
 
-    // Binary expressions (e.g. `X + Y` or `X and Y`)
+    // Binary expressions
     and_or: $ => prec.left(
       1,
       seq(
@@ -362,6 +402,11 @@ module.exports = grammar({
     nil: _ => 'nil',
     true: _ => 'true',
     false: _ => 'false',
+    break: _ => 'break',
+    next: _ => 'next',
+    mutable: _ => 'mut',
+    move: _ => 'move',
+    visibility: _ => 'pub',
     line_comment: _ => token(seq('#', /.*/)),
     identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
     field_name: _ => /@[a-zA-Z\d_]+/,

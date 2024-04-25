@@ -29,19 +29,19 @@ fn example -> (A, B) {}
 ---
 
 (source_file
-  (module_method name: (identifier) body: (block))
-  (module_method name: (identifier) arguments: (arguments) body: (block))
-  (module_method
+  (method name: (identifier) body: (block))
+  (method name: (identifier) arguments: (arguments) body: (block))
+  (method
     name: (identifier)
     arguments: (arguments (argument name: (identifier) type: (type)))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments: (arguments
       (argument name: (identifier) type: (type))
       (argument name: (identifier) type: (type)))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments: (arguments
       (argument
@@ -50,7 +50,7 @@ fn example -> (A, B) {}
           name: (constant)
           arguments: (type_arguments (type)))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments: (arguments
       (argument
@@ -59,36 +59,36 @@ fn example -> (A, B) {}
           name: (constant)
           arguments: (type_arguments (type) (type)))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments: (arguments (argument name: (identifier) type: (type)))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments: (arguments
       (argument name: (identifier) type: (ref_type type: (type))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (mut_type type: (type))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (uni_type type: (type))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (fn_type)))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (fn_type returns: (type))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments
@@ -96,32 +96,32 @@ fn example -> (A, B) {}
           name: (identifier)
           type: (fn_type arguments: (arguments (type) (type)) returns: (type))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (ref_type type: (fn_type))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (mut_type type: (fn_type))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     arguments:
       (arguments (argument name: (identifier) type: (uni_type type: (fn_type))))
     body: (block))
-  (module_method name: (identifier) returns: (type) body: (block))
-  (module_method
+  (method name: (identifier) returns: (type) body: (block))
+  (method
     name: (identifier)
     type_parameters: (type_parameters (type_parameter name: (constant)))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     type_parameters: (type_parameters
       (type_parameter name: (constant)) (type_parameter name: (constant)))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     type_parameters: (type_parameters
       (type_parameter
@@ -132,17 +132,17 @@ fn example -> (A, B) {}
           (mutable)
           (generic_type name: (constant) arguments: (type_arguments (type))))))
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     type_parameters: (type_parameters (type_parameter name: (constant)))
     arguments: (arguments (argument name: (identifier) type: (type)))
     returns: (type)
     body: (block))
-  (module_method
+  (method
     visibility: (visibility)
     name: (identifier)
     body: (block))
-  (module_method
+  (method
     name: (identifier)
     returns: (tuple_type (type) (type))
     body: (block)))
