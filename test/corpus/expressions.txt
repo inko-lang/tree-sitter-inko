@@ -28,3 +28,202 @@ Floats
 ---
 
 (source_file (float) (float) (float) (float) (float) (float) (float))
+
+===
+Keyword expressions
+===
+
+self
+nil
+true
+false
+
+---
+
+(source_file (self) (nil) (true) (false))
+
+===
+Blocks
+===
+
+{}
+{ true }
+
+---
+
+(source_file (block) (block (true)))
+
+===
+Single quoted strings
+===
+
+'hello'
+'a\nb'
+'a\tb'
+'a\u{AC}b'
+'a\u{FFFF}b'
+'a
+b'
+'a\${}b'
+'a${10}b'
+'a\'b'
+'a\"b'
+
+---
+
+(source_file
+  (string (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (interpolation (integer)) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content)))
+
+===
+Double quoted strings
+===
+
+"hello"
+"a\nb"
+"a\tb"
+"a\u{AC}b"
+"a\u{FFFF}b"
+"a
+b"
+"a\${}b"
+"a${10}b"
+"a\'b"
+"a\"b"
+
+---
+
+(source_file
+  (string (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (interpolation (integer)) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (escape_sequence) (string_content)))
+
+===
+Identifiers and constants
+===
+
+foo
+Foo
+
+---
+
+(source_file (identifier) (constant))
+
+===
+Binary operations
+===
+
+1 and 2
+1 or 2
+1 and 2 or 3
+1 + 2
+1 - 2
+1 / 2
+1 * 2
+1 ** 2
+1 % 2
+1 < 2
+1 > 2
+1 <= 2
+1 >= 2
+1 << 2
+1 >> 2
+1 >>> 2
+1 & 2
+1 | 2
+1 ^ 2
+1 == 2
+1 != 2
+1 + 2 and 3
+1 + 2 or 3
+
+---
+
+(source_file
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (binary (integer) (integer)) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (integer) (integer))
+  (binary (binary (integer) (integer)) (integer))
+  (binary (binary (integer) (integer)) (integer)))
+
+===
+Type casts
+===
+
+1 + 2 as A
+1 as A as B
+1 as A or 2 as B
+1 as A and 2 as B
+
+---
+
+(source_file
+  (cast (binary (integer) (integer)) (type))
+  (cast (cast (integer) (type)) (type))
+  (binary (cast (integer) (type)) (cast (integer) (type)))
+  (binary (cast (integer) (type)) (cast (integer) (type))))
+
+===
+Constant definitions
+===
+
+let A = 10
+let A = A + B
+
+---
+
+(source_file
+  (define_constant name: (constant) value: (integer))
+  (define_constant
+    name: (constant) value: (binary left: (constant) right: (constant))))
+
+===
+Variable definitions
+===
+
+let a = 10
+let a: Int = 10
+let mut a = 10
+let a = 1 + 2
+
+---
+
+(source_file
+  (define_variable name: (identifier) value: (integer))
+  (define_variable name: (identifier) type: (type) value: (integer))
+  (define_variable modifier: (mutable) name: (identifier) value: (integer))
+  (define_variable
+    name: (identifier) value: (binary left: (integer) right: (integer))))

@@ -47,7 +47,9 @@
   "tree-sitter": [
     {
       "scope": "source.inko",
-      "injection-regex": "^inko$"
+      "injection-regex": "^inko$",
+      "file-types": ["inko"],
+      "highlights": ["queries/highlights.scm"]
     }
   ]
 }

@@ -36,6 +36,7 @@ module.exports = grammar({
       $.implement_trait,
       $.reopen_class,
       $._expression,
+      $.define_constant,
     ),
 
     // Imports
@@ -46,14 +47,17 @@ module.exports = grammar({
       field('tags', optional($.tags)),
     ),
     path: $ => seq($.identifier, repeat(seq('.', $.identifier))),
-    symbols: $ => seq('(', comma_list($._symbol), ')'),
-    _symbol: $ => choice($.import_as, $.self, $.constant, $.identifier),
+    symbols: $ => seq(
+      '(',
+      comma_list(choice($.import_as, $.self, $.constant, $.identifier)),
+      ')'
+    ),
     import_as: $ => choice(
       import_as($.self, $.identifier),
       import_as($.identifier, $.identifier),
       import_as($.constant, $.constant),
     ),
-    tags: $ => seq('if', list($.identifier, 'and', false)),
+    tags: $ => prec.right(seq('if', list($.identifier, 'and', false))),
     extern_import: $ => seq(
       'import',
       'extern',
@@ -63,14 +67,19 @@ module.exports = grammar({
     extern_import_path: $ => seq('"', /[^"]*/, '"'),
 
     // Methods
-    external_function: $ => seq(
-      'fn',
-      field('visibility', optional($.visibility)),
-      'extern',
-      field('name', $.identifier),
-      field('arguments', optional(alias($.extern_arguments, $.arguments))),
-      field('returns', optional($._returns)),
-      field('body', optional($.block)),
+    //
+    // The right precedence is needed here such that the function body doesn't
+    // conflict with block _expressions_.
+    external_function: $ => prec.right(
+      seq(
+        'fn',
+        field('visibility', optional($.visibility)),
+        'extern',
+        field('name', $.identifier),
+        field('arguments', optional(alias($.extern_arguments, $.arguments))),
+        field('returns', optional($._returns)),
+        field('body', optional($.block)),
+      )
     ),
     extern_arguments: $ => seq(
       '(',
@@ -108,11 +117,11 @@ module.exports = grammar({
       list($._type_parameter_requirement, '+', false),
     ),
     _type_parameter_requirement: $ => choice(
-      alias($.mutable_requirement, $.mut),
+      $.mutable,
       $.generic_type,
       alias($.constant, $.type),
     ),
-    mutable_requirement: _ => 'mut',
+    mutable: _ => 'mut',
     visibility: _ => 'pub',
     _method_modifier: _ => choice(
       'mut',
@@ -229,6 +238,7 @@ module.exports = grammar({
       $.mut_type,
       $.uni_type,
       $.fn_type,
+      $.tuple_type,
     ),
     generic_type: $ => seq(
       field('name', $.constant),
@@ -244,18 +254,114 @@ module.exports = grammar({
       field('returns', optional($._returns)),
     ),
     fn_type_arguments: $ => seq('(', comma_list($._type), ')'),
+    tuple_type: $ => seq('(', comma_list($._type), ')'),
 
     // Expressions
     block: $ => seq('{', repeat($._expression), '}'),
     _expression: $ => choice(
+      $.define_variable,
       $.float,
       $.integer,
+      $.self,
+      $.nil,
+      $.true,
+      $.false,
+      $.block,
+      $.string,
+      $.identifier,
+      $.constant,
+      alias($.and_or, $.binary),
+      $.cast,
+      $.binary,
     ),
+
+    // Constant definitions
+    define_constant: $ => seq(
+      'let',
+      field('name', $.constant),
+      '=',
+      field('value', $._expression),
+    ),
+    define_variable: $ => prec.left(
+      0,
+      seq(
+        'let',
+        field('modifier', optional($.mutable)),
+        field('name', $.identifier),
+        field('type', optional(seq(':', $._type))),
+        '=',
+        field('value', $._expression),
+      ),
+    ),
+
+    // Binary expressions (e.g. `X + Y` or `X and Y`)
+    and_or: $ => prec.left(
+      1,
+      seq(
+        field('left', $._expression),
+        field('operator', choice('and', 'or')),
+        field('right', $._expression)
+      )
+    ),
+    binary: $ => prec.left(
+      2,
+      seq(
+        field('left', $._expression),
+        field(
+          'operator',
+          choice(
+            '+', '-', '/', '*', '**', '%', '<', '>', '<=', '>=', '<<', '>>',
+            '>>>', '&', '|', '^', '==', '!=',
+          ),
+        ),
+        field('right', $._expression),
+      )
+    ),
+    cast: $ => prec.left(
+      2,
+      seq(
+        field('expression', $._expression),
+        'as',
+        field('type', $._type),
+      )
+    ),
+
+    // Numbers
     float: _ => /-?\d[\d_]*((e|E)(\+|-)?|\.)[\d_]+/,
     integer: _ => /-?(0x[\da-fA-F_]+|\d[\d_]*)/,
 
+    // Strings
+    string: $ => choice(
+      seq(
+        "'",
+        repeat(choice(
+          $.interpolation,
+          $.escape_sequence,
+          alias(/[^'\$\\]+/, $.string_content),
+        )),
+        "'"
+      ),
+      seq(
+        '"',
+        repeat(choice(
+          $.interpolation,
+          $.escape_sequence,
+          alias(/[^"\$\\]+/, $.string_content),
+        )),
+        '"'
+      ),
+    ),
+    escape_sequence: _ => choice(
+      seq('\\u{', /[a-fA-F0-9]*/, '}'),
+      /\\[a-z\$'"]/
+    ),
+    interpolation: $ => seq('${', repeat($._expression), '}'),
+
     // Various terminals (e.g. identifiers)
     self: _ => 'self',
+    nil: _ => 'nil',
+    true: _ => 'true',
+    false: _ => 'false',
     line_comment: _ => token(seq('#', /.*/)),
     identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
     field_name: _ => /@[a-zA-Z\d_]+/,

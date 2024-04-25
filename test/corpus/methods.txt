@@ -24,6 +24,7 @@ fn example[A, B] {}
 fn example[A: B + C + mut + D[A]] {}
 fn example[A](a: A) -> A {}
 fn pub example {}
+fn example -> (A, B) {}
 
 ---
 
@@ -128,7 +129,7 @@ fn pub example {}
         requirements: (requirements
           (type)
           (type)
-          (mut)
+          (mutable)
           (generic_type name: (constant) arguments: (type_arguments (type))))))
     body: (block))
   (module_method
@@ -140,6 +141,10 @@ fn pub example {}
   (module_method
     visibility: (visibility)
     name: (identifier)
+    body: (block))
+  (module_method
+    name: (identifier)
+    returns: (tuple_type (type) (type))
     body: (block)))
 
 ===

@@ -39,7 +39,7 @@ class A {
         requirements: (requirements
           (type)
           (type)
-          (mut)
+          (mutable)
           (generic_type name: (constant) arguments: (type_arguments (type)))))
       (type_parameter name: (constant)))
     body: (class_body))
@@ -113,7 +113,7 @@ class A {
             requirements: (requirements
               (type)
               (type)
-              (mut)
+              (mutable)
               (generic_type name: (constant) arguments: (type_arguments (type))))))
         body: (block)))))
 

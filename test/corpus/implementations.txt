@@ -26,7 +26,7 @@ impl A for B {
     trait: (type)
     class: (constant)
     bounds: (bounds
-      (bound name: (constant) requirements: (requirements (type) (mut)))
+      (bound name: (constant) requirements: (requirements (type) (mutable)))
       (bound name: (constant) requirements: (requirements (type))))
     body: (implement_trait_body))
   (reopen_class
