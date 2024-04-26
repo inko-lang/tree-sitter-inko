@@ -60,11 +60,13 @@ module.exports = grammar({
       import_as($.constant, $.constant),
     ),
     tags: $ => prec.right(seq('if', list($.identifier, 'and', false))),
-    extern_import: $ => seq(
-      'import',
-      'extern',
-      field('path', alias($.extern_import_path, $.path)),
-      field('tags', optional($.tags)),
+    extern_import: $ => prec.right(
+      seq(
+        'import',
+        'extern',
+        field('path', alias($.extern_import_path, $.path)),
+        field('tags', optional($.tags)),
+      ),
     ),
     extern_import_path: $ => seq('"', /[^"]*/, '"'),
 
@@ -143,13 +145,13 @@ module.exports = grammar({
     _class_modifier: $ => choice('async', 'builtin', 'enum'),
     class_body: $ => seq('{', repeat($._class_expression) , '}'),
     _class_expression: $ => choice(
-      $.field,
+      $.define_field,
       $.case,
       alias($.class_method, $.method),
     ),
-    field: $ => seq(
+    define_field: $ => seq(
       'let',
-      field('name', $.field_name),
+      field('name', $.field),
       ':',
       field('type', $._type),
     ),
@@ -271,7 +273,6 @@ module.exports = grammar({
       $.block,
       $.string,
       $.identifier,
-      $.constant,
       alias($.and_or, $.binary),
       $.cast,
       $.binary,
@@ -283,10 +284,14 @@ module.exports = grammar({
       $.next,
       $.try,
       $.closure,
+      $.field,
+      $.if,
+      prec.right(0, $.constant),
+      prec.right(1, $.instance),
     ),
-    grouped_expression: $ => seq('(', $._expression ,')'),
 
     // Sequences
+    grouped_expression: $ => seq('(', $._expression ,')'),
     tuple: $ => seq('(', $._expression, ',', comma_list($._expression), ')'),
     array: $ => seq('[', comma_list($._expression), ']'),
 
@@ -296,6 +301,37 @@ module.exports = grammar({
       optional(seq(token.immediate(/[ \t]+/), $._expression)),
     ),
     try: $ => seq('try', $._expression),
+
+    if: $ => seq(
+      'if',
+      field('condition', $._expression),
+      field('consequence', $.block),
+      repeat(field('alternative', $.else_if)),
+      field('alternative', optional($.else)),
+    ),
+    else_if: $ => seq(
+      'else',
+      'if',
+      field('condition', $._expression),
+      field('consequence', $.block),
+    ),
+    else: $ => seq('else', field('body', $.block)),
+
+    // Class instance expressions
+    instance: $ => seq(
+      field('name', $.constant),
+      field('fields', $.instance_fields),
+    ),
+    instance_fields: $ => seq(
+      '{',
+      comma_list($.assign_field),
+      '}'
+    ),
+    assign_field: $ => seq(
+      field('name', $.field),
+      '=',
+      field('value', $._expression)
+    ),
 
     // Closures
     closure: $ => seq(
@@ -409,7 +445,7 @@ module.exports = grammar({
     visibility: _ => 'pub',
     line_comment: _ => token(seq('#', /.*/)),
     identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
-    field_name: _ => /@[a-zA-Z\d_]+/,
+    field: _ => /@[a-zA-Z\d_]+/,
     constant: _ => /[A-Z][a-zA-Z\d_]*/
   }
 });

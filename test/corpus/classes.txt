@@ -60,8 +60,8 @@ class A {
   (class
     name: (constant)
     body: (class_body
-      (field name: (field_name) type: (type))
-      (field name: (field_name) type: (type)))))
+      (define_field name: (field) type: (type))
+      (define_field name: (field) type: (type)))))
 
 ===
 Classes with methods

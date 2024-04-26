@@ -96,7 +96,7 @@
 
 ; Classes
 (class name: _ @type)
-(field name: _ @property)
+(define_field name: _ @property)
 
 ; Traits
 (trait name: _ @type)

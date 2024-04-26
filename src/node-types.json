@@ -141,6 +141,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -150,6 +154,14 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -189,6 +201,124 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "assign_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -236,6 +366,10 @@
             "named": true
           },
           {
+            "type": "field",
+            "named": true
+          },
+          {
             "type": "float",
             "named": true
           },
@@ -245,6 +379,14 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
             "named": true
           },
           {
@@ -412,6 +554,10 @@
             "named": true
           },
           {
+            "type": "field",
+            "named": true
+          },
+          {
             "type": "float",
             "named": true
           },
@@ -421,6 +567,14 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
             "named": true
           },
           {
@@ -508,6 +662,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -517,6 +675,14 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -670,6 +836,10 @@
             "named": true
           },
           {
+            "type": "field",
+            "named": true
+          },
+          {
             "type": "float",
             "named": true
           },
@@ -679,6 +849,14 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
             "named": true
           },
           {
@@ -824,7 +1002,7 @@
           "named": true
         },
         {
-          "type": "field",
+          "type": "define_field",
           "named": true
         },
         {
@@ -963,6 +1141,10 @@
             "named": true
           },
           {
+            "type": "field",
+            "named": true
+          },
+          {
             "type": "float",
             "named": true
           },
@@ -972,6 +1154,14 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
             "named": true
           },
           {
@@ -1008,6 +1198,56 @@
           },
           {
             "type": "tuple",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "define_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "fn_type",
+            "named": true
+          },
+          {
+            "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "mut_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
+            "named": true
+          },
+          {
+            "type": "tuple_type",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          },
+          {
+            "type": "uni_type",
             "named": true
           }
         ]
@@ -1117,6 +1357,10 @@
             "named": true
           },
           {
+            "type": "field",
+            "named": true
+          },
+          {
             "type": "float",
             "named": true
           },
@@ -1126,6 +1370,14 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
             "named": true
           },
           {
@@ -1162,6 +1414,140 @@
           },
           {
             "type": "tuple",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "else",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "else_if",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
             "named": true
           }
         ]
@@ -1277,56 +1663,6 @@
         "types": [
           {
             "type": "visibility",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "field",
-    "named": true,
-    "fields": {
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "field_name",
-            "named": true
-          }
-        ]
-      },
-      "type": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "fn_type",
-            "named": true
-          },
-          {
-            "type": "generic_type",
-            "named": true
-          },
-          {
-            "type": "mut_type",
-            "named": true
-          },
-          {
-            "type": "ref_type",
-            "named": true
-          },
-          {
-            "type": "tuple_type",
-            "named": true
-          },
-          {
-            "type": "type",
-            "named": true
-          },
-          {
-            "type": "uni_type",
             "named": true
           }
         ]
@@ -1458,6 +1794,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -1467,6 +1807,14 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -1506,6 +1854,138 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "if",
+    "named": true,
+    "fields": {
+      "alternative": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "else",
+            "named": true
+          },
+          {
+            "type": "else_if",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          }
+        ]
+      },
+      "consequence": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1652,6 +2132,47 @@
     }
   },
   {
+    "type": "instance",
+    "named": true,
+    "fields": {
+      "fields": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "instance_fields",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "instance_fields",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "assign_field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "interpolation",
     "named": true,
     "fields": {},
@@ -1696,6 +2217,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -1705,6 +2230,14 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -2088,6 +2621,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -2097,6 +2634,14 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -2199,6 +2744,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -2211,11 +2760,19 @@
           "named": true
         },
         {
+          "type": "if",
+          "named": true
+        },
+        {
           "type": "implement_trait",
           "named": true
         },
         {
           "type": "import",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -2450,6 +3007,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -2459,6 +3020,14 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -2545,6 +3114,10 @@
           "named": true
         },
         {
+          "type": "field",
+          "named": true
+        },
+        {
           "type": "float",
           "named": true
         },
@@ -2554,6 +3127,14 @@
         },
         {
           "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
           "named": true
         },
         {
@@ -2915,6 +3496,10 @@
     "named": true
   },
   {
+    "type": "else",
+    "named": false
+  },
+  {
     "type": "enum",
     "named": false
   },
@@ -2927,7 +3512,7 @@
     "named": true
   },
   {
-    "type": "field_name",
+    "type": "field",
     "named": true
   },
   {

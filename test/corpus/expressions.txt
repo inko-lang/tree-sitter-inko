@@ -114,15 +114,16 @@ b"
   (string (string_content) (escape_sequence) (string_content)))
 
 ===
-Identifiers and constants
+Variable references
 ===
 
 foo
 Foo
+@foo
 
 ---
 
-(source_file (identifier) (constant))
+(source_file (identifier) (constant) (field))
 
 ===
 Binary operations
@@ -278,6 +279,21 @@ Arrays
   (array (integer) (integer)))
 
 ===
+Instance expressions
+===
+
+Person {}
+Person { @a = '', @b = 0, }
+
+---
+
+(source_file
+  (instance name: (constant) fields: (instance_fields))
+  (instance name: (constant) fields: (instance_fields
+    (assign_field name: (field) value: (string))
+    (assign_field name: (field) value: (integer)))))
+
+===
 Control flow expressions
 ===
 
@@ -335,3 +351,25 @@ fn move {}
     returns: (type)
     body: (block))
   (closure modifier: (modifier) body: (block)))
+
+===
+If expressions
+===
+
+if true {}
+if true {} else if true {}
+if true {} else if true {} else {}
+
+---
+
+(source_file
+  (if condition: (true) consequence: (block))
+  (if
+    condition: (true)
+    consequence: (block)
+    alternative: (else_if condition: (true) consequence: (block)))
+  (if
+    condition: (true)
+    consequence: (block)
+    alternative: (else_if condition: (true) consequence: (block))
+    alternative: (else body: (block))))
