@@ -1,3 +1,12 @@
+const OPS = [
+  '+', '-', '/', '*', '**', '%', '<', '>', '<=', '>=', '<<', '>>', '>>>', '&',
+  '|', '^', '==', '!=',
+];
+
+const COMPOUND_OPS = [
+  '+=', '-=', '/=', '*=', '**=', '%=', '<<=', '>>=', '>>>=', '&=', '|=', '^=',
+];
+
 function list(rule, sep, trailing) {
   const steps = [rule, repeat(seq(sep, rule))];
 
@@ -79,7 +88,7 @@ module.exports = grammar({
         'fn',
         field('visibility', optional($.visibility)),
         'extern',
-        field('name', $.identifier),
+        field('name', alias($.method_name, $.identifier)),
         field('arguments', optional(alias($.extern_arguments, $.arguments))),
         field('returns', optional($._returns)),
         field('body', optional($.block)),
@@ -94,12 +103,13 @@ module.exports = grammar({
     module_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
-      field('name', $.identifier),
+      field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
       field('returns', optional($._returns)),
       field('body', $.block),
     ),
+    method_name: $ => choice(/[a-zA-Z\d_]+(=|\?)?/, ...OPS),
     method_arguments: $ => seq('(', comma_list($.argument), ')'),
     argument: $ => seq(
       field('name', $.identifier),
@@ -146,16 +156,17 @@ module.exports = grammar({
     class_body: $ => seq('{', repeat($._class_expression) , '}'),
     _class_expression: $ => choice(
       $.define_field,
-      $.case,
+      $.define_case,
       alias($.class_method, $.method),
     ),
     define_field: $ => seq(
       'let',
+      field('visibility', optional($.visibility)),
       field('name', $.field),
       ':',
       field('type', $._type),
     ),
-    case: $ => seq(
+    define_case: $ => seq(
       'case',
       field('name', $.constant),
       field('arguments', optional(alias($.case_arguments, $.arguments))),
@@ -165,7 +176,7 @@ module.exports = grammar({
       'fn',
       field('visibility', optional($.visibility)),
       field('modifier', optional(alias($._method_modifier, $.modifier))),
-      field('name', $.identifier),
+      field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
       field('returns', optional($._returns)),
@@ -186,7 +197,7 @@ module.exports = grammar({
       'fn',
       field('visibility', optional($.visibility)),
       field('modifier', optional(alias($._trait_method_modifier, $.modifier))),
-      field('name', $.identifier),
+      field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
       field('returns', optional($._returns)),
@@ -224,6 +235,7 @@ module.exports = grammar({
     reopen_class: $ => seq(
       'impl',
       field('name', $.constant),
+      field('bounds', optional($.bounds)),
       field('body', $.reopen_class_body),
     ),
     reopen_class_body: $ => seq(
@@ -263,6 +275,7 @@ module.exports = grammar({
     // Expressions
     block: $ => seq('{', repeat($._expression), '}'),
     _expression: $ => choice(
+      $.binary,
       $.define_variable,
       $.float,
       $.integer,
@@ -272,10 +285,8 @@ module.exports = grammar({
       $.false,
       $.block,
       $.string,
-      $.identifier,
       alias($.and_or, $.binary),
       $.cast,
-      $.binary,
       $.grouped_expression,
       $.tuple,
       $.array,
@@ -283,12 +294,122 @@ module.exports = grammar({
       $.return,
       $.next,
       $.try,
+      $.throw,
       $.closure,
       $.field,
       $.if,
-      prec.right(0, $.constant),
-      prec.right(1, $.instance),
+      $.while,
+      $.loop,
+      $.match,
+      $.ref,
+      $.mut,
+      $.recover,
+      prec.right($.identifier),
+      $.call,
+      prec.right($.constant),
+      $.instance,
+      alias($.call_with_receiver, $.call),
+      $.assign_receiver_field,
+      $.assign_local,
+      $.assign_field,
+      $.replace_local,
+      $.replace_field,
+      $.compound_assign_local,
+      $.compound_assign_field,
+      $.compound_assign_receiver_field,
     ),
+
+    // Assignments
+    assign_receiver_field: $ => prec.right(
+      3,
+      seq(
+        field('receiver', $._expression),
+        '.',
+        field('name', $._call_name),
+        '=',
+        field('value', $._expression)
+      )
+    ),
+    assign_local: $ => seq(
+      field('name', $.identifier),
+      '=',
+      field('value', $._expression),
+    ),
+    assign_field: $ => seq(
+      field('name', $.field),
+      '=',
+      field('value', $._expression),
+    ),
+    replace_local: $ => seq(
+      field('name', $.identifier),
+      ':=',
+      field('value', $._expression),
+    ),
+    replace_field: $ => seq(
+      field('name', $.field),
+      ':=',
+      field('value', $._expression),
+    ),
+    compound_assign_local: $ => seq(
+      field('name', $.identifier),
+      choice(...COMPOUND_OPS),
+      field('value', $._expression),
+    ),
+    compound_assign_field: $ => seq(
+      field('name', $.field),
+      choice(...COMPOUND_OPS),
+      field('value', $._expression),
+    ),
+    compound_assign_receiver_field: $ => prec.right(
+      3,
+      seq(
+        field('receiver', $._expression),
+        '.',
+        field('name', choice($.identifier, $.constant, $.integer)),
+        choice(...COMPOUND_OPS),
+        field('value', $._expression)
+      )
+    ),
+
+    // Method calls
+    _call_name: $ => choice(
+      $.identifier,
+      alias($.identifier_with_question, $.identifier),
+      $.constant,
+      $.integer,
+    ),
+    call: $ => seq(
+      field('name', $._call_name),
+      field('arguments', alias($.call_arguments, $.arguments)),
+    ),
+    call_arguments: $ => seq(
+      token.immediate('('),
+      comma_list($._call_argument),
+      ')',
+    ),
+    _call_argument: $ => choice(
+      $._expression,
+      $.named_argument,
+    ),
+    named_argument: $ => seq(
+      field('name', $.identifier),
+      ':',
+      field('value', $._expression)
+    ),
+    call_with_receiver: $ => prec.right(
+      3,
+      seq(
+        field('receiver', $._expression),
+        '.',
+        field('name', $._call_name),
+        field('arguments', optional(alias($.call_arguments, $.arguments))),
+      ),
+    ),
+
+    // Borrows
+    ref: $ => prec.right(seq('ref', $._expression)),
+    mut: $ => prec.right(seq('mut', $._expression)),
+    recover: $ => prec.right(seq('recover', $._expression)),
 
     // Sequences
     grouped_expression: $ => seq('(', $._expression ,')'),
@@ -296,11 +417,12 @@ module.exports = grammar({
     array: $ => seq('[', comma_list($._expression), ']'),
 
     // Control flow
-    return: $ => seq(
+    return: $ => prec.right(seq(
       'return',
-      optional(seq(token.immediate(/[ \t]+/), $._expression)),
-    ),
+      optional(seq(token.immediate(/[ \t]+/), optional($._expression))),
+    )),
     try: $ => seq('try', $._expression),
+    throw: $ => seq('throw', $._expression),
 
     if: $ => seq(
       'if',
@@ -316,6 +438,66 @@ module.exports = grammar({
       field('consequence', $.block),
     ),
     else: $ => seq('else', field('body', $.block)),
+
+    // Loops
+    while: $ => seq(
+      'while',
+      field('condition', $._expression),
+      field('body', $.block),
+    ),
+    loop: $ => seq('loop', field('body', $.block)),
+
+    // Pattern matching
+    match: $ => seq(
+      'match',
+      field('value', $._expression),
+      '{',
+      field('cases', optional($.cases)),
+      '}'
+    ),
+    cases: $ => seq(
+      $.case,
+      repeat(seq(optional(','), $.case)),
+      optional(','),
+    ),
+    case: $ => seq(
+      'case',
+      field('pattern', $._pattern),
+      field('guard', optional(seq('if', $._expression))),
+      '->',
+      field('body', $._expression),
+    ),
+    _pattern: $ => choice(
+      $.wildcard_pattern,
+      alias($.identifier, $.identifier_pattern),
+      alias($.integer, $.integer_pattern),
+      alias($.string, $.string_pattern),
+      alias($.constant, $.constant_pattern),
+      $.enum_pattern,
+      $.class_pattern,
+      $.tuple_pattern,
+      $.or_pattern,
+      $.boolean_pattern,
+      $.mutable_pattern,
+    ),
+    mutable_pattern: $ => seq('mut', alias($.identifier, $.identifier_pattern)),
+    wildcard_pattern: $ => '_',
+    tuple_pattern: $ => seq('(', comma_list($._pattern), ')'),
+    enum_pattern: $ => seq(
+      field('name', $.constant),
+      field('arguments', alias($.enum_pattern_arguments, $.arguments)),
+    ),
+    enum_pattern_arguments: $ => seq('(', comma_list($._pattern), ')'),
+    class_pattern: $ => seq('{', comma_list($.field_pattern), '}'),
+    field_pattern: $ => seq(
+      field('name', $.field),
+      '=',
+      field('pattern', $._pattern),
+    ),
+    or_pattern: $ => prec.left(
+      seq($._pattern, repeat1(prec.left(seq('or', $._pattern)))),
+    ),
+    boolean_pattern: $ => choice('true', 'false'),
 
     // Class instance expressions
     instance: $ => seq(
@@ -385,10 +567,7 @@ module.exports = grammar({
         field('left', $._expression),
         field(
           'operator',
-          choice(
-            '+', '-', '/', '*', '**', '%', '<', '>', '<=', '>=', '<<', '>>',
-            '>>>', '&', '|', '^', '==', '!=',
-          ),
+          choice(...OPS),
         ),
         field('right', $._expression),
       )
@@ -445,6 +624,7 @@ module.exports = grammar({
     visibility: _ => 'pub',
     line_comment: _ => token(seq('#', /.*/)),
     identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
+    identifier_with_question: _ => /([a-z]|_)[a-zA-Z\d_]*\?/,
     field: _ => /@[a-zA-Z\d_]+/,
     constant: _ => /[A-Z][a-zA-Z\d_]*/
   }

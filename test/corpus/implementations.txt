@@ -13,6 +13,7 @@ impl A for B {
   fn example {}
   fn mut example {}
 }
+impl A if B: C {}
 
 ---
 
@@ -39,4 +40,9 @@ impl A for B {
     class: (constant)
     body: (implement_trait_body
       (method name: (identifier) body: (block))
-      (method modifier: (modifier) name: (identifier) body: (block)))))
+      (method modifier: (modifier) name: (identifier) body: (block))))
+  (reopen_class
+    name: (constant)
+    bounds: (bounds
+      (bound name: (constant) requirements: (requirements (type))))
+    body: (reopen_class_body)))

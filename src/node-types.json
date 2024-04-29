@@ -62,6 +62,94 @@
           "named": true
         },
         {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "boolean_pattern",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "class_pattern",
+          "named": true
+        },
+        {
+          "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "constant_pattern",
+          "named": true
+        },
+        {
+          "type": "define_variable",
+          "named": true
+        },
+        {
+          "type": "enum_pattern",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
           "type": "fn_type",
           "named": true
         },
@@ -70,7 +158,75 @@
           "named": true
         },
         {
+          "type": "grouped_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "integer_pattern",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "mut_type",
+          "named": true
+        },
+        {
+          "type": "mutable_pattern",
+          "named": true
+        },
+        {
+          "type": "named_argument",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "or_pattern",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
           "named": true
         },
         {
@@ -78,7 +234,51 @@
           "named": true
         },
         {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
+          "named": true
+        },
+        {
           "type": "rest_argument",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "string_pattern",
+          "named": true
+        },
+        {
+          "type": "throw",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "try",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
           "named": true
         },
         {
@@ -91,6 +291,14 @@
         },
         {
           "type": "uni_type",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        },
+        {
+          "type": "wildcard_pattern",
           "named": true
         }
       ]
@@ -109,6 +317,18 @@
           "named": true
         },
         {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -121,11 +341,27 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -169,11 +405,39 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "next",
           "named": true
         },
         {
           "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -189,6 +453,10 @@
           "named": true
         },
         {
+          "type": "throw",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         },
@@ -198,6 +466,10 @@
         },
         {
           "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -226,6 +498,18 @@
             "named": true
           },
           {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -238,11 +522,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -286,11 +586,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -306,6 +634,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -315,6 +647,548 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "assign_local",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "assign_receiver_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "receiver": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -334,6 +1208,18 @@
             "named": true
           },
           {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -346,11 +1232,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -394,11 +1296,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -414,6 +1344,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -423,6 +1357,10 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -522,6 +1460,18 @@
             "named": true
           },
           {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -534,11 +1484,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -582,11 +1548,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -602,6 +1596,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -611,6 +1609,10 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -630,6 +1632,18 @@
           "named": true
         },
         {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -642,11 +1656,27 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -690,11 +1720,39 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "next",
           "named": true
         },
         {
           "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -710,6 +1768,10 @@
           "named": true
         },
         {
+          "type": "throw",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         },
@@ -720,9 +1782,18 @@
         {
           "type": "tuple",
           "named": true
+        },
+        {
+          "type": "while",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "boolean_pattern",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "bound",
@@ -766,7 +1837,7 @@
     }
   },
   {
-    "type": "case",
+    "type": "call",
     "named": true,
     "fields": {
       "arguments": {
@@ -786,21 +1857,35 @@
           {
             "type": "constant",
             "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
           }
         ]
-      }
-    }
-  },
-  {
-    "type": "cast",
-    "named": true,
-    "fields": {
-      "expression": {
+      },
+      "receiver": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
             "named": true
           },
           {
@@ -816,11 +1901,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -864,11 +1965,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -884,6 +2013,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -893,6 +2026,589 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "case",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "guard": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": false
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_pattern",
+            "named": true
+          },
+          {
+            "type": "class_pattern",
+            "named": true
+          },
+          {
+            "type": "constant_pattern",
+            "named": true
+          },
+          {
+            "type": "enum_pattern",
+            "named": true
+          },
+          {
+            "type": "identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "integer_pattern",
+            "named": true
+          },
+          {
+            "type": "mutable_pattern",
+            "named": true
+          },
+          {
+            "type": "or_pattern",
+            "named": true
+          },
+          {
+            "type": "string_pattern",
+            "named": true
+          },
+          {
+            "type": "tuple_pattern",
+            "named": true
+          },
+          {
+            "type": "wildcard_pattern",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "cases",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "case",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cast",
+    "named": true,
+    "fields": {
+      "expression": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -998,7 +2714,7 @@
       "required": false,
       "types": [
         {
-          "type": "case",
+          "type": "define_case",
           "named": true
         },
         {
@@ -1007,6 +2723,21 @@
         },
         {
           "type": "method",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "class_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "field_pattern",
           "named": true
         }
       ]
@@ -1087,7 +2818,7 @@
     }
   },
   {
-    "type": "define_constant",
+    "type": "compound_assign_field",
     "named": true,
     "fields": {
       "name": {
@@ -1095,7 +2826,7 @@
         "required": true,
         "types": [
           {
-            "type": "constant",
+            "type": "field",
             "named": true
           }
         ]
@@ -1106,6 +2837,18 @@
         "types": [
           {
             "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
             "named": true
           },
           {
@@ -1121,11 +2864,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -1169,11 +2928,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -1189,6 +2976,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -1198,6 +2989,756 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "compound_assign_local",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "compound_assign_receiver_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          }
+        ]
+      },
+      "receiver": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "define_case",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "define_constant",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -1248,6 +3789,16 @@
           },
           {
             "type": "uni_type",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
             "named": true
           }
         ]
@@ -1325,6 +3876,18 @@
             "named": true
           },
           {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -1337,11 +3900,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -1385,11 +3964,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -1405,6 +4012,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -1414,6 +4025,10 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -1449,6 +4064,18 @@
             "named": true
           },
           {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -1461,11 +4088,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -1509,11 +4152,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -1529,6 +4200,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -1539,6 +4214,10 @@
           {
             "type": "tuple",
             "named": true
+          },
+          {
+            "type": "while",
+            "named": true
           }
         ]
       },
@@ -1548,6 +4227,32 @@
         "types": [
           {
             "type": "block",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "enum_pattern",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "arguments",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "constant",
             "named": true
           }
         ]
@@ -1670,6 +4375,77 @@
     }
   },
   {
+    "type": "false",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "field_pattern",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_pattern",
+            "named": true
+          },
+          {
+            "type": "class_pattern",
+            "named": true
+          },
+          {
+            "type": "constant_pattern",
+            "named": true
+          },
+          {
+            "type": "enum_pattern",
+            "named": true
+          },
+          {
+            "type": "identifier_pattern",
+            "named": true
+          },
+          {
+            "type": "integer_pattern",
+            "named": true
+          },
+          {
+            "type": "mutable_pattern",
+            "named": true
+          },
+          {
+            "type": "or_pattern",
+            "named": true
+          },
+          {
+            "type": "string_pattern",
+            "named": true
+          },
+          {
+            "type": "tuple_pattern",
+            "named": true
+          },
+          {
+            "type": "wildcard_pattern",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "fn_type",
     "named": true,
     "fields": {
@@ -1762,6 +4538,18 @@
           "named": true
         },
         {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -1774,11 +4562,27 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -1822,11 +4626,39 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "next",
           "named": true
         },
         {
           "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -1842,6 +4674,10 @@
           "named": true
         },
         {
+          "type": "throw",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         },
@@ -1852,9 +4688,18 @@
         {
           "type": "tuple",
           "named": true
+        },
+        {
+          "type": "while",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "if",
@@ -1883,6 +4728,18 @@
             "named": true
           },
           {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -1895,11 +4752,27 @@
             "named": true
           },
           {
+            "type": "call",
+            "named": true
+          },
+          {
             "type": "cast",
             "named": true
           },
           {
             "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
             "named": true
           },
           {
@@ -1943,11 +4816,39 @@
             "named": true
           },
           {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
             "type": "next",
             "named": true
           },
           {
             "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
             "named": true
           },
           {
@@ -1963,6 +4864,10 @@
             "named": true
           },
           {
+            "type": "throw",
+            "named": true
+          },
+          {
             "type": "true",
             "named": true
           },
@@ -1972,6 +4877,10 @@
           },
           {
             "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
             "named": true
           }
         ]
@@ -2185,6 +5094,18 @@
           "named": true
         },
         {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -2197,11 +5118,27 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -2245,11 +5182,39 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "next",
           "named": true
         },
         {
           "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -2265,6 +5230,10 @@
           "named": true
         },
         {
+          "type": "throw",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         },
@@ -2275,8 +5244,210 @@
         {
           "type": "tuple",
           "named": true
+        },
+        {
+          "type": "while",
+          "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "loop",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "match",
+    "named": true,
+    "fields": {
+      "cases": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "cases",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -2389,6 +5560,177 @@
     "fields": {}
   },
   {
+    "type": "mut",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "define_variable",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "grouped_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "throw",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "try",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "mut_type",
     "named": true,
     "fields": {
@@ -2434,6 +5776,258 @@
     "fields": {}
   },
   {
+    "type": "mutable_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "named_argument",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "or_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean_pattern",
+          "named": true
+        },
+        {
+          "type": "class_pattern",
+          "named": true
+        },
+        {
+          "type": "constant_pattern",
+          "named": true
+        },
+        {
+          "type": "enum_pattern",
+          "named": true
+        },
+        {
+          "type": "identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "integer_pattern",
+          "named": true
+        },
+        {
+          "type": "mutable_pattern",
+          "named": true
+        },
+        {
+          "type": "or_pattern",
+          "named": true
+        },
+        {
+          "type": "string_pattern",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
+          "named": true
+        },
+        {
+          "type": "wildcard_pattern",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "path",
     "named": true,
     "fields": {},
@@ -2443,6 +6037,348 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recover",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "define_variable",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "grouped_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "throw",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "try",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ref",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "define_variable",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "grouped_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "throw",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "try",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -2502,6 +6438,16 @@
           }
         ]
       },
+      "bounds": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bounds",
+            "named": true
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -2527,6 +6473,370 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "replace_field",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "field",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "replace_local",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -2589,6 +6899,18 @@
           "named": true
         },
         {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -2601,11 +6923,27 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -2649,11 +6987,39 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "next",
           "named": true
         },
         {
           "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -2669,6 +7035,10 @@
           "named": true
         },
         {
+          "type": "throw",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         },
@@ -2678,6 +7048,10 @@
         },
         {
           "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -2696,6 +7070,18 @@
           "named": true
         },
         {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -2708,6 +7094,10 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
@@ -2717,6 +7107,18 @@
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -2780,7 +7182,19 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
           "type": "method",
+          "named": true
+        },
+        {
+          "type": "mut",
           "named": true
         },
         {
@@ -2792,7 +7206,23 @@
           "named": true
         },
         {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
           "type": "reopen_class",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -2805,6 +7235,10 @@
         },
         {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "throw",
           "named": true
         },
         {
@@ -2822,12 +7256,39 @@
         {
           "type": "tuple",
           "named": true
+        },
+        {
+          "type": "while",
+          "named": true
         }
       ]
     }
   },
   {
     "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        },
+        {
+          "type": "interpolation",
+          "named": true
+        },
+        {
+          "type": "string_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string_pattern",
     "named": true,
     "fields": {},
     "children": {
@@ -2886,6 +7347,177 @@
       "types": [
         {
           "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "throw",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "define_variable",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "grouped_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "instance",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "throw",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "try",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -2963,6 +7595,11 @@
     }
   },
   {
+    "type": "true",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "try",
     "named": true,
     "fields": {},
@@ -2972,6 +7609,18 @@
       "types": [
         {
           "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
           "named": true
         },
         {
@@ -2987,11 +7636,27 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -3035,11 +7700,39 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "next",
           "named": true
         },
         {
           "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -3055,6 +7748,10 @@
           "named": true
         },
         {
+          "type": "throw",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         },
@@ -3064,6 +7761,10 @@
         },
         {
           "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -3082,6 +7783,18 @@
           "named": true
         },
         {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -3094,11 +7807,27 @@
           "named": true
         },
         {
+          "type": "call",
+          "named": true
+        },
+        {
           "type": "cast",
           "named": true
         },
         {
           "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
           "named": true
         },
         {
@@ -3142,11 +7871,39 @@
           "named": true
         },
         {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
           "type": "next",
           "named": true
         },
         {
           "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
           "named": true
         },
         {
@@ -3162,6 +7919,10 @@
           "named": true
         },
         {
+          "type": "throw",
+          "named": true
+        },
+        {
           "type": "true",
           "named": true
         },
@@ -3171,6 +7932,65 @@
         },
         {
           "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tuple_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean_pattern",
+          "named": true
+        },
+        {
+          "type": "class_pattern",
+          "named": true
+        },
+        {
+          "type": "constant_pattern",
+          "named": true
+        },
+        {
+          "type": "enum_pattern",
+          "named": true
+        },
+        {
+          "type": "identifier_pattern",
+          "named": true
+        },
+        {
+          "type": "integer_pattern",
+          "named": true
+        },
+        {
+          "type": "mutable_pattern",
+          "named": true
+        },
+        {
+          "type": "or_pattern",
+          "named": true
+        },
+        {
+          "type": "string_pattern",
+          "named": true
+        },
+        {
+          "type": "tuple_pattern",
+          "named": true
+        },
+        {
+          "type": "wildcard_pattern",
           "named": true
         }
       ]
@@ -3336,6 +8156,188 @@
     }
   },
   {
+    "type": "while",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          },
+          {
+            "type": "assign_field",
+            "named": true
+          },
+          {
+            "type": "assign_local",
+            "named": true
+          },
+          {
+            "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "binary",
+            "named": true
+          },
+          {
+            "type": "block",
+            "named": true
+          },
+          {
+            "type": "break",
+            "named": true
+          },
+          {
+            "type": "call",
+            "named": true
+          },
+          {
+            "type": "cast",
+            "named": true
+          },
+          {
+            "type": "closure",
+            "named": true
+          },
+          {
+            "type": "compound_assign_field",
+            "named": true
+          },
+          {
+            "type": "compound_assign_local",
+            "named": true
+          },
+          {
+            "type": "compound_assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "constant",
+            "named": true
+          },
+          {
+            "type": "define_variable",
+            "named": true
+          },
+          {
+            "type": "false",
+            "named": true
+          },
+          {
+            "type": "field",
+            "named": true
+          },
+          {
+            "type": "float",
+            "named": true
+          },
+          {
+            "type": "grouped_expression",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "if",
+            "named": true
+          },
+          {
+            "type": "instance",
+            "named": true
+          },
+          {
+            "type": "integer",
+            "named": true
+          },
+          {
+            "type": "loop",
+            "named": true
+          },
+          {
+            "type": "match",
+            "named": true
+          },
+          {
+            "type": "mut",
+            "named": true
+          },
+          {
+            "type": "next",
+            "named": true
+          },
+          {
+            "type": "nil",
+            "named": true
+          },
+          {
+            "type": "recover",
+            "named": true
+          },
+          {
+            "type": "ref",
+            "named": true
+          },
+          {
+            "type": "replace_field",
+            "named": true
+          },
+          {
+            "type": "replace_local",
+            "named": true
+          },
+          {
+            "type": "return",
+            "named": true
+          },
+          {
+            "type": "self",
+            "named": true
+          },
+          {
+            "type": "string",
+            "named": true
+          },
+          {
+            "type": "throw",
+            "named": true
+          },
+          {
+            "type": "true",
+            "named": true
+          },
+          {
+            "type": "try",
+            "named": true
+          },
+          {
+            "type": "tuple",
+            "named": true
+          },
+          {
+            "type": "while",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "!=",
     "named": false
   },
@@ -3352,7 +8354,15 @@
     "named": false
   },
   {
+    "type": "%=",
+    "named": false
+  },
+  {
     "type": "&",
+    "named": false
+  },
+  {
+    "type": "&=",
     "named": false
   },
   {
@@ -3376,7 +8386,19 @@
     "named": false
   },
   {
+    "type": "**=",
+    "named": false
+  },
+  {
+    "type": "*=",
+    "named": false
+  },
+  {
     "type": "+",
+    "named": false
+  },
+  {
+    "type": "+=",
     "named": false
   },
   {
@@ -3385,6 +8407,10 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "-=",
     "named": false
   },
   {
@@ -3404,7 +8430,15 @@
     "named": false
   },
   {
+    "type": "/=",
+    "named": false
+  },
+  {
     "type": ":",
+    "named": false
+  },
+  {
+    "type": ":=",
     "named": false
   },
   {
@@ -3413,6 +8447,10 @@
   },
   {
     "type": "<<",
+    "named": false
+  },
+  {
+    "type": "<<=",
     "named": false
   },
   {
@@ -3440,7 +8478,15 @@
     "named": false
   },
   {
+    "type": ">>=",
+    "named": false
+  },
+  {
     "type": ">>>",
+    "named": false
+  },
+  {
+    "type": ">>>=",
     "named": false
   },
   {
@@ -3457,6 +8503,10 @@
   },
   {
     "type": "^",
+    "named": false
+  },
+  {
+    "type": "^=",
     "named": false
   },
   {
@@ -3496,6 +8546,10 @@
     "named": true
   },
   {
+    "type": "constant_pattern",
+    "named": true
+  },
+  {
     "type": "else",
     "named": false
   },
@@ -3509,7 +8563,7 @@
   },
   {
     "type": "false",
-    "named": true
+    "named": false
   },
   {
     "type": "field",
@@ -3528,7 +8582,7 @@
     "named": false
   },
   {
-    "type": "identifier",
+    "type": "identifier_pattern",
     "named": true
   },
   {
@@ -3548,12 +8602,24 @@
     "named": true
   },
   {
+    "type": "integer_pattern",
+    "named": true
+  },
+  {
     "type": "let",
     "named": false
   },
   {
     "type": "line_comment",
     "named": true
+  },
+  {
+    "type": "loop",
+    "named": false
+  },
+  {
+    "type": "match",
+    "named": false
   },
   {
     "type": "move",
@@ -3573,6 +8639,10 @@
   },
   {
     "type": "or",
+    "named": false
+  },
+  {
+    "type": "recover",
     "named": false
   },
   {
@@ -3596,12 +8666,16 @@
     "named": true
   },
   {
+    "type": "throw",
+    "named": false
+  },
+  {
     "type": "trait",
     "named": false
   },
   {
     "type": "true",
-    "named": true
+    "named": false
   },
   {
     "type": "try",
@@ -3620,11 +8694,23 @@
     "named": true
   },
   {
+    "type": "while",
+    "named": false
+  },
+  {
+    "type": "wildcard_pattern",
+    "named": true
+  },
+  {
     "type": "{",
     "named": false
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "|=",
     "named": false
   },
   {

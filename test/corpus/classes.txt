@@ -52,6 +52,7 @@ Classes with fields
 class A {
   let @a: A
   let @b: B
+  let pub @c: C
 }
 
 ---
@@ -61,7 +62,8 @@ class A {
     name: (constant)
     body: (class_body
       (define_field name: (field) type: (type))
-      (define_field name: (field) type: (type)))))
+      (define_field name: (field) type: (type))
+      (define_field visibility: (visibility) name: (field) type: (type)))))
 
 ===
 Classes with methods
@@ -130,5 +132,5 @@ class A {
 
 (source_file
   (class name: (constant) body: (class_body
-    (case name: (constant))
-    (case name: (constant) arguments: (arguments (type) (type))))))
+    (define_case name: (constant))
+    (define_case name: (constant) arguments: (arguments (type) (type))))))

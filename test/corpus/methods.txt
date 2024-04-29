@@ -25,6 +25,27 @@ fn example[A: B + C + mut + D[A]] {}
 fn example[A](a: A) -> A {}
 fn pub example {}
 fn example -> (A, B) {}
+fn example= -> A {}
+fn 0 {}
+fn foo? {}
+fn + {}
+fn - {}
+fn / {}
+fn * {}
+fn ** {}
+fn % {}
+fn < {}
+fn > {}
+fn <= {}
+fn >= {}
+fn << {}
+fn >> {}
+fn >>> {}
+fn & {}
+fn | {}
+fn ^ {}
+fn == {}
+fn != {}
 
 ---
 
@@ -138,14 +159,29 @@ fn example -> (A, B) {}
     arguments: (arguments (argument name: (identifier) type: (type)))
     returns: (type)
     body: (block))
-  (method
-    visibility: (visibility)
-    name: (identifier)
-    body: (block))
-  (method
-    name: (identifier)
-    returns: (tuple_type (type) (type))
-    body: (block)))
+  (method visibility: (visibility) name: (identifier) body: (block))
+  (method name: (identifier) returns: (tuple_type (type) (type)) body: (block))
+  (method name: (identifier) returns: (type) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block))
+  (method name: (identifier) body: (block)))
 
 ===
 External functions

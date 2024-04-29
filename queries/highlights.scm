@@ -53,7 +53,7 @@
   ;"match"
   ;"move"
   ;"next"
-  ;"or"
+  "or"
   ;"recover"
   ;"return"
   ;"throw"
@@ -86,6 +86,11 @@
   "}" @punctuation.special) @embedded
 
 (constant) @constant
+
+; Patterns
+(integer_pattern) @number
+(string_pattern) @string
+(constant_pattern) @constant
 
 ; Types
 (generic_type name: _ @type)
