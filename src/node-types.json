@@ -174,10 +174,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -397,10 +393,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -575,10 +567,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -757,10 +745,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -950,10 +934,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -1113,10 +1093,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -1285,10 +1261,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -1540,10 +1512,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -1709,10 +1677,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "instance",
           "named": true
         },
         {
@@ -1957,10 +1921,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -2129,10 +2089,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -2296,10 +2252,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -2533,10 +2485,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -2920,10 +2868,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -3099,10 +3043,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -3292,10 +3232,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -3455,10 +3391,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -3666,10 +3598,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -3739,6 +3667,16 @@
           },
           {
             "type": "while",
+            "named": true
+          }
+        ]
+      },
+      "visibility": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "visibility",
             "named": true
           }
         ]
@@ -3956,10 +3894,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -4141,10 +4075,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -4618,10 +4548,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -4805,10 +4731,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -5041,47 +4963,6 @@
     }
   },
   {
-    "type": "instance",
-    "named": true,
-    "fields": {
-      "fields": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "instance_fields",
-            "named": true
-          }
-        ]
-      },
-      "name": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "constant",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "instance_fields",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "assign_field",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "interpolation",
     "named": true,
     "fields": {},
@@ -5171,10 +5052,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "instance",
           "named": true
         },
         {
@@ -5368,10 +5245,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -5652,10 +5525,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -5890,10 +5759,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -6135,10 +6000,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -6303,10 +6164,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "instance",
           "named": true
         },
         {
@@ -6578,10 +6435,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -6757,10 +6610,6 @@
           },
           {
             "type": "if",
-            "named": true
-          },
-          {
-            "type": "instance",
             "named": true
           },
           {
@@ -6979,10 +6828,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -7171,10 +7016,6 @@
         },
         {
           "type": "import",
-          "named": true
-        },
-        {
-          "type": "instance",
           "named": true
         },
         {
@@ -7445,10 +7286,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -7692,10 +7529,6 @@
           "named": true
         },
         {
-          "type": "instance",
-          "named": true
-        },
-        {
           "type": "integer",
           "named": true
         },
@@ -7860,10 +7693,6 @@
         },
         {
           "type": "if",
-          "named": true
-        },
-        {
-          "type": "instance",
           "named": true
         },
         {
@@ -8258,10 +8087,6 @@
             "named": true
           },
           {
-            "type": "instance",
-            "named": true
-          },
-          {
             "type": "integer",
             "named": true
           },
@@ -8491,6 +8316,10 @@
   },
   {
     "type": "[",
+    "named": false
+  },
+  {
+    "type": "\\\\",
     "named": false
   },
   {

@@ -306,8 +306,7 @@ module.exports = grammar({
       $.recover,
       prec.right($.identifier),
       $.call,
-      prec.right($.constant),
-      $.instance,
+      $.constant,
       alias($.call_with_receiver, $.call),
       $.assign_receiver_field,
       $.assign_local,
@@ -499,22 +498,6 @@ module.exports = grammar({
     ),
     boolean_pattern: $ => choice('true', 'false'),
 
-    // Class instance expressions
-    instance: $ => seq(
-      field('name', $.constant),
-      field('fields', $.instance_fields),
-    ),
-    instance_fields: $ => seq(
-      '{',
-      comma_list($.assign_field),
-      '}'
-    ),
-    assign_field: $ => seq(
-      field('name', $.field),
-      '=',
-      field('value', $._expression)
-    ),
-
     // Closures
     closure: $ => seq(
       'fn',
@@ -536,6 +519,7 @@ module.exports = grammar({
     // let definitions
     define_constant: $ => seq(
       'let',
+      field('visibility', optional($.visibility)),
       field('name', $.constant),
       '=',
       field('value', $._expression),
@@ -608,7 +592,8 @@ module.exports = grammar({
     ),
     escape_sequence: _ => choice(
       seq('\\u{', /[a-fA-F0-9]*/, '}'),
-      /\\[a-z\$'"]/
+      '\\\\',
+      /\\[a-z\$'"]/,
     ),
     interpolation: $ => seq('${', repeat($._expression), '}'),
 

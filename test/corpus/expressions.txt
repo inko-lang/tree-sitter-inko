@@ -71,6 +71,7 @@ b'
 'a${10}b'
 'a\'b'
 'a\"b'
+'a\\u'
 
 ---
 
@@ -83,6 +84,7 @@ b'
   (string (string_content))
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (interpolation (integer)) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (escape_sequence) (string_content)))
 
@@ -206,13 +208,15 @@ Constant definitions
 
 let A = 10
 let A = A + B
+let pub A = 10
 
 ---
 
 (source_file
   (define_constant name: (constant) value: (integer))
   (define_constant
-    name: (constant) value: (binary left: (constant) right: (constant))))
+    name: (constant) value: (binary left: (constant) right: (constant)))
+  (define_constant visibility: (visibility) name: (constant) value: (integer)))
 
 ===
 Variable definitions
@@ -280,21 +284,6 @@ Arrays
   (array (integer))
   (array (integer) (integer))
   (array (integer) (integer)))
-
-===
-Instance expressions
-===
-
-Person {}
-Person { @a = '', @b = 0, }
-
----
-
-(source_file
-  (instance name: (constant) fields: (instance_fields))
-  (instance name: (constant) fields: (instance_fields
-    (assign_field name: (field) value: (string))
-    (assign_field name: (field) value: (integer)))))
 
 ===
 Control flow expressions
@@ -553,6 +542,7 @@ a.0
 10()
 a.b?
 a?()
+A()
 
 ---
 
@@ -587,7 +577,8 @@ a?()
   (call receiver: (identifier) name: (integer))
   (call name: (integer) arguments: (arguments))
   (call receiver: (identifier) name: (identifier))
-  (call name: (identifier) arguments: (arguments)))
+  (call name: (identifier) arguments: (arguments))
+  (call name: (constant) arguments: (arguments)))
 
 ===
 Named arguments
