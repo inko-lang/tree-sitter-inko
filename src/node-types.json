@@ -26,6 +26,10 @@
             "named": true
           },
           {
+            "type": "move_type",
+            "named": true
+          },
+          {
             "type": "mut_type",
             "named": true
           },
@@ -187,6 +191,10 @@
         },
         {
           "type": "match",
+          "named": true
+        },
+        {
+          "type": "move_type",
           "named": true
         },
         {
@@ -2574,6 +2582,10 @@
             "named": true
           },
           {
+            "type": "move_type",
+            "named": true
+          },
+          {
             "type": "mut_type",
             "named": true
           },
@@ -2739,6 +2751,10 @@
           },
           {
             "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "move_type",
             "named": true
           },
           {
@@ -3470,6 +3486,32 @@
     }
   },
   {
+    "type": "constant_pattern",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "constant",
+            "named": true
+          }
+        ]
+      },
+      "receiver": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "define_case",
     "named": true,
     "fields": {
@@ -3710,6 +3752,10 @@
             "named": true
           },
           {
+            "type": "move_type",
+            "named": true
+          },
+          {
             "type": "mut_type",
             "named": true
           },
@@ -3781,6 +3827,10 @@
           },
           {
             "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "move_type",
             "named": true
           },
           {
@@ -4271,6 +4321,10 @@
             "named": true
           },
           {
+            "type": "move_type",
+            "named": true
+          },
+          {
             "type": "mut_type",
             "named": true
           },
@@ -4403,6 +4457,10 @@
           },
           {
             "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "move_type",
             "named": true
           },
           {
@@ -5384,6 +5442,10 @@
             "named": true
           },
           {
+            "type": "move_type",
+            "named": true
+          },
+          {
             "type": "mut_type",
             "named": true
           },
@@ -5431,6 +5493,50 @@
     "type": "modifier",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "move_type",
+    "named": true,
+    "fields": {
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "fn_type",
+            "named": true
+          },
+          {
+            "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "move_type",
+            "named": true
+          },
+          {
+            "type": "mut_type",
+            "named": true
+          },
+          {
+            "type": "ref_type",
+            "named": true
+          },
+          {
+            "type": "tuple_type",
+            "named": true
+          },
+          {
+            "type": "type",
+            "named": true
+          },
+          {
+            "type": "uni_type",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "mut",
@@ -5613,6 +5719,10 @@
           },
           {
             "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "move_type",
             "named": true
           },
           {
@@ -6255,6 +6365,10 @@
           },
           {
             "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "move_type",
             "named": true
           },
           {
@@ -7842,6 +7956,10 @@
           "named": true
         },
         {
+          "type": "move_type",
+          "named": true
+        },
+        {
           "type": "mut_type",
           "named": true
         },
@@ -7878,6 +7996,10 @@
         },
         {
           "type": "generic_type",
+          "named": true
+        },
+        {
+          "type": "move_type",
           "named": true
         },
         {
@@ -7958,6 +8080,10 @@
           },
           {
             "type": "generic_type",
+            "named": true
+          },
+          {
+            "type": "move_type",
             "named": true
           },
           {
@@ -8372,10 +8498,6 @@
   },
   {
     "type": "constant",
-    "named": true
-  },
-  {
-    "type": "constant_pattern",
     "named": true
   },
   {

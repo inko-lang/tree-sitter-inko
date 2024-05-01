@@ -72,6 +72,7 @@ b'
 'a\'b'
 'a\"b'
 'a\\u'
+'a\0b'
 
 ---
 
@@ -84,6 +85,7 @@ b'
   (string (string_content))
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (interpolation (integer)) (string_content))
+  (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (escape_sequence) (string_content)))
@@ -407,6 +409,7 @@ match x { case 1 or 2 or 3 -> {} }
 match x { case 1 if true -> {} }
 match x { case true -> {} }
 match x { case false -> {} }
+match x { case a.B -> {} }
 
 ---
 
@@ -496,7 +499,13 @@ match x { case false -> {} }
     cases: (cases (case pattern: (boolean_pattern) body: (block))))
   (match
     value: (identifier)
-    cases: (cases (case pattern: (boolean_pattern) body: (block)))))
+    cases: (cases (case pattern: (boolean_pattern) body: (block))))
+  (match
+    value: (identifier)
+    cases: (cases
+      (case
+        pattern: (constant_pattern receiver: (identifier) name: (constant))
+        body: (block)))))
 
 ===
 Borrow expressions
@@ -543,6 +552,7 @@ a.0
 a.b?
 a?()
 A()
+foo?
 
 ---
 
@@ -578,7 +588,8 @@ A()
   (call name: (integer) arguments: (arguments))
   (call receiver: (identifier) name: (identifier))
   (call name: (identifier) arguments: (arguments))
-  (call name: (constant) arguments: (arguments)))
+  (call name: (constant) arguments: (arguments))
+  (call name: (identifier)))
 
 ===
 Named arguments

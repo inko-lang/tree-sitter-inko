@@ -109,7 +109,7 @@ module.exports = grammar({
       field('returns', optional($._returns)),
       field('body', $.block),
     ),
-    method_name: $ => choice(/[a-zA-Z\d_]+(=|\?)?/, ...OPS),
+    method_name: $ => choice(/[a-zA-Z\d_\$]+(=|\?)?/, ...OPS),
     method_arguments: $ => seq('(', comma_list($.argument), ')'),
     argument: $ => seq(
       field('name', $.identifier),
@@ -152,7 +152,7 @@ module.exports = grammar({
       field('type_parameters', optional($.type_parameters)),
       field('body', $.class_body),
     ),
-    _class_modifier: $ => choice('async', 'builtin', 'enum'),
+    _class_modifier: $ => choice('async', 'builtin', 'enum', 'extern'),
     class_body: $ => seq('{', repeat($._class_expression) , '}'),
     _class_expression: $ => choice(
       $.define_field,
@@ -253,6 +253,7 @@ module.exports = grammar({
       $.uni_type,
       $.fn_type,
       $.tuple_type,
+      $.move_type,
     ),
     generic_type: $ => seq(
       field('name', $.constant),
@@ -262,6 +263,7 @@ module.exports = grammar({
     ref_type: $ => seq('ref', field('type', $._type)),
     mut_type: $ => seq('mut', field('type', $._type)),
     uni_type: $ => seq('uni', field('type', $._type)),
+    move_type: $ => seq('move', field('type', $._type)),
     fn_type: $ => prec.right(
       seq(
         'fn',
@@ -372,14 +374,17 @@ module.exports = grammar({
 
     // Method calls
     _call_name: $ => choice(
+      alias($.identifier_with_special, $.identifier),
       $.identifier,
-      alias($.identifier_with_question, $.identifier),
       $.constant,
       $.integer,
     ),
-    call: $ => seq(
-      field('name', $._call_name),
-      field('arguments', alias($.call_arguments, $.arguments)),
+    call: $ => choice(
+      seq(field('name', alias($.identifier_with_special, $.identifier))),
+      seq(
+        field('name', $._call_name),
+        field('arguments', alias($.call_arguments, $.arguments)),
+      )
     ),
     call_arguments: $ => seq(
       token.immediate('('),
@@ -472,6 +477,7 @@ module.exports = grammar({
       alias($.integer, $.integer_pattern),
       alias($.string, $.string_pattern),
       alias($.constant, $.constant_pattern),
+      alias($.namespaced_constant_pattern, $.constant_pattern),
       $.enum_pattern,
       $.class_pattern,
       $.tuple_pattern,
@@ -497,6 +503,11 @@ module.exports = grammar({
       seq($._pattern, repeat1(prec.left(seq('or', $._pattern)))),
     ),
     boolean_pattern: $ => choice('true', 'false'),
+    namespaced_constant_pattern: $ => seq(
+      field('receiver', $.identifier),
+      '.',
+      field('name', $.constant),
+    ),
 
     // Closures
     closure: $ => seq(
@@ -593,7 +604,7 @@ module.exports = grammar({
     escape_sequence: _ => choice(
       seq('\\u{', /[a-fA-F0-9]*/, '}'),
       '\\\\',
-      /\\[a-z\$'"]/,
+      /\\[a-z0\$'"]/,
     ),
     interpolation: $ => seq('${', repeat($._expression), '}'),
 
@@ -609,7 +620,7 @@ module.exports = grammar({
     visibility: _ => 'pub',
     line_comment: _ => token(seq('#', /.*/)),
     identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
-    identifier_with_question: _ => /([a-z]|_)[a-zA-Z\d_]*\?/,
+    identifier_with_special: _ => /([a-z]|_)[a-zA-Z\d_\$]*\??/,
     field: _ => /@[a-zA-Z\d_]+/,
     constant: _ => /[A-Z][a-zA-Z\d_]*/
   }

@@ -6,6 +6,7 @@ class A {}
 class pub A {}
 class async A {}
 class builtin A {}
+class extern A {}
 class enum A {}
 class pub async A {}
 class A[A] {}
@@ -19,6 +20,7 @@ class A {
 (source_file
   (class name: (constant) body: (class_body))
   (class visibility: (visibility) name: (constant) body: (class_body))
+  (class modifier: (modifier) name: (constant) body: (class_body))
   (class modifier: (modifier) name: (constant) body: (class_body))
   (class modifier: (modifier) name: (constant) body: (class_body))
   (class modifier: (modifier) name: (constant) body: (class_body))

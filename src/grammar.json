@@ -729,7 +729,7 @@
       "members": [
         {
           "type": "PATTERN",
-          "value": "[a-zA-Z\\d_]+(=|\\?)?"
+          "value": "[a-zA-Z\\d_\\$]+(=|\\?)?"
         },
         {
           "type": "STRING",
@@ -1183,6 +1183,10 @@
         {
           "type": "STRING",
           "value": "enum"
+        },
+        {
+          "type": "STRING",
+          "value": "extern"
         }
       ]
     },
@@ -2111,6 +2115,10 @@
         {
           "type": "SYMBOL",
           "name": "tuple_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "move_type"
         }
       ]
     },
@@ -2233,6 +2241,23 @@
         {
           "type": "STRING",
           "value": "uni"
+        },
+        {
+          "type": "FIELD",
+          "name": "type",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_type"
+          }
+        }
+      ]
+    },
+    "move_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "move"
         },
         {
           "type": "FIELD",
@@ -3009,17 +3034,17 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
           "type": "ALIAS",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier_with_question"
+            "name": "identifier_with_special"
           },
           "named": true,
           "value": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
         },
         {
           "type": "SYMBOL",
@@ -3032,28 +3057,51 @@
       ]
     },
     "call": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "FIELD",
-          "name": "name",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_call_name"
-          }
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "name",
+              "content": {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "identifier_with_special"
+                },
+                "named": true,
+                "value": "identifier"
+              }
+            }
+          ]
         },
         {
-          "type": "FIELD",
-          "name": "arguments",
-          "content": {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "call_arguments"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "name",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_call_name"
+              }
             },
-            "named": true,
-            "value": "arguments"
-          }
+            {
+              "type": "FIELD",
+              "name": "arguments",
+              "content": {
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "call_arguments"
+                },
+                "named": true,
+                "value": "arguments"
+              }
+            }
+          ]
         }
       ]
     },
@@ -3793,6 +3841,15 @@
           "value": "constant_pattern"
         },
         {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "namespaced_constant_pattern"
+          },
+          "named": true,
+          "value": "constant_pattern"
+        },
+        {
           "type": "SYMBOL",
           "name": "enum_pattern"
         },
@@ -4108,6 +4165,31 @@
         {
           "type": "STRING",
           "value": "false"
+        }
+      ]
+    },
+    "namespaced_constant_pattern": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "receiver",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "constant"
+          }
         }
       ]
     },
@@ -4708,7 +4790,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "\\\\[a-z\\$'\"]"
+          "value": "\\\\[a-z0\\$'\"]"
         }
       ]
     },
@@ -4788,9 +4870,9 @@
       "type": "PATTERN",
       "value": "([a-z]|_)[a-zA-Z\\d_]*"
     },
-    "identifier_with_question": {
+    "identifier_with_special": {
       "type": "PATTERN",
-      "value": "([a-z]|_)[a-zA-Z\\d_]*\\?"
+      "value": "([a-z]|_)[a-zA-Z\\d_\\$]*\\??"
     },
     "field": {
       "type": "PATTERN",
