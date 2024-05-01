@@ -118,6 +118,7 @@
 (named_argument name: _ @variable)
 
 (call name: _ @function)
+(field) @property
 (identifier) @variable
 ((identifier) @function
  (#is-not? local))
