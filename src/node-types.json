@@ -840,15 +840,11 @@
         "required": true,
         "types": [
           {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "integer",
+            "named": true
+          },
+          {
+            "type": "name",
             "named": true
           }
         ]
@@ -1827,15 +1823,11 @@
         "required": true,
         "types": [
           {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
             "type": "integer",
+            "named": true
+          },
+          {
+            "type": "name",
             "named": true
           }
         ]
@@ -8579,6 +8571,10 @@
   {
     "type": "mut",
     "named": false
+  },
+  {
+    "type": "name",
+    "named": true
   },
   {
     "type": "next",

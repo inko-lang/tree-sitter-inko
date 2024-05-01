@@ -47,18 +47,16 @@
   "ref"
   "trait"
   "uni"
-  ;"break"
-  ;"else"
-  ;"loop"
-  ;"match"
-  ;"move"
-  ;"next"
+  "loop"
+  "match"
+  "else"
+  "move"
   "or"
-  ;"recover"
-  ;"return"
-  ;"throw"
-  ;"try"
-  ;"while"
+  "recover"
+  "return"
+  "throw"
+  "try"
+  "while"
   (modifier)
   (visibility)
 ] @keyword
@@ -70,6 +68,8 @@
 [
   (nil)
   (self)
+  (break)
+  (next)
 ] @keyword
 
 [
@@ -114,3 +114,10 @@
 ; Methods
 (method name: _ @function)
 (external_function name: _ @function)
+(argument name: _ @variable)
+(named_argument name: _ @variable)
+
+(call name: _ @function)
+(identifier) @variable
+((identifier) @function
+ (#is-not? local))

@@ -374,13 +374,17 @@ module.exports = grammar({
 
     // Method calls
     _call_name: $ => choice(
-      alias($.identifier_with_special, $.identifier),
-      $.identifier,
-      $.constant,
+      // Identifiers are aliased as "name" such that highliths don't conflict
+      // with locals (e.g. ensuring `name` in `self.name` doesn't get
+      // highlighted as a variable if a local variable with the same name
+      // exists).
+      alias($.identifier_with_special, $.name),
+      alias($.identifier, $.name),
+      alias($.constant, $.name),
       $.integer,
     ),
     call: $ => choice(
-      seq(field('name', alias($.identifier_with_special, $.identifier))),
+      seq(field('name', alias($.identifier_with_special, $.name))),
       seq(
         field('name', $._call_name),
         field('arguments', alias($.call_arguments, $.arguments)),

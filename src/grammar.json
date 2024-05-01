@@ -3040,15 +3040,25 @@
             "name": "identifier_with_special"
           },
           "named": true,
-          "value": "identifier"
+          "value": "name"
         },
         {
-          "type": "SYMBOL",
-          "name": "identifier"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          "named": true,
+          "value": "name"
         },
         {
-          "type": "SYMBOL",
-          "name": "constant"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "constant"
+          },
+          "named": true,
+          "value": "name"
         },
         {
           "type": "SYMBOL",
@@ -3072,7 +3082,7 @@
                   "name": "identifier_with_special"
                 },
                 "named": true,
-                "value": "identifier"
+                "value": "name"
               }
             }
           ]

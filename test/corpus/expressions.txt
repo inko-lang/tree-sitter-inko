@@ -557,39 +557,37 @@ foo?
 ---
 
 (source_file
-  (call name: (identifier) arguments: (arguments))
-  (call name: (identifier) arguments: (arguments (integer)))
-  (call name: (identifier) arguments: (arguments (integer) (integer)))
-  (call name: (identifier) arguments: (arguments (integer) (integer)))
-  (call receiver: (integer) name: (identifier))
+  (call name: (name) arguments: (arguments))
+  (call name: (name) arguments: (arguments (integer)))
+  (call name: (name) arguments: (arguments (integer) (integer)))
+  (call name: (name) arguments: (arguments (integer) (integer)))
+  (call receiver: (integer) name: (name))
   (call
     receiver: (integer)
-    name: (identifier) arguments: (arguments (integer) (integer)))
+    name: (name) arguments: (arguments (integer) (integer)))
   (call
-    receiver: (call receiver: (integer) name: (identifier))
-    name: (identifier))
-  (binary left: (integer) right: (call receiver: (integer) name: (identifier)))
+    receiver: (call receiver: (integer) name: (name))
+    name: (name))
+  (binary left: (integer) right: (call receiver: (integer) name: (name)))
   (call
     receiver: (grouped_expression (binary left: (integer) right: (integer)))
-    name: (identifier))
-  (mut (call receiver: (integer) name: (identifier)))
-  (mut (call
-    receiver: (call receiver: (integer) name: (identifier))
-    name: (identifier)))
-  (ref (call receiver: (integer) name: (identifier)))
-  (recover (call receiver: (integer) name: (identifier)))
-  (try (call receiver: (integer) name: (identifier)))
-  (throw (call receiver: (integer) name: (identifier)))
-  (call receiver: (block (integer)) name: (identifier))
-  (call receiver: (integer) name: (constant))
-  (call name: (constant) arguments: (arguments))
-  (return (call receiver: (integer) name: (identifier)))
+    name: (name))
+  (mut (call receiver: (integer) name: (name)))
+  (mut (call receiver: (call receiver: (integer) name: (name)) name: (name)))
+  (ref (call receiver: (integer) name: (name)))
+  (recover (call receiver: (integer) name: (name)))
+  (try (call receiver: (integer) name: (name)))
+  (throw (call receiver: (integer) name: (name)))
+  (call receiver: (block (integer)) name: (name))
+  (call receiver: (integer) name: (name))
+  (call name: (name) arguments: (arguments))
+  (return (call receiver: (integer) name: (name)))
   (call receiver: (identifier) name: (integer))
   (call name: (integer) arguments: (arguments))
-  (call receiver: (identifier) name: (identifier))
-  (call name: (identifier) arguments: (arguments))
-  (call name: (constant) arguments: (arguments))
-  (call name: (identifier)))
+  (call receiver: (identifier) name: (name))
+  (call name: (name) arguments: (arguments))
+  (call name: (name) arguments: (arguments))
+  (call name: (name)))
 
 ===
 Named arguments
@@ -601,7 +599,7 @@ a(num: 1)
 
 (source_file
   (call
-    name: (identifier)
+    name: (name)
     arguments: (arguments
       (named_argument name: (identifier) value: (integer)))))
 
@@ -621,22 +619,13 @@ a := 1
 ---
 
 (source_file
-  (assign_receiver_field
-    receiver: (integer)
-    name: (identifier)
-    value: (integer))
-  (assign_receiver_field
-    receiver: (integer)
-    name: (constant)
-    value: (integer))
+  (assign_receiver_field receiver: (integer) name: (name) value: (integer))
+  (assign_receiver_field receiver: (integer) name: (name) value: (integer))
   (assign_receiver_field
     receiver: (identifier)
     name: (integer)
     value: (integer))
-  (assign_receiver_field
-    receiver: (identifier)
-    name: (identifier)
-    value: (integer))
+  (assign_receiver_field receiver: (identifier) name: (name) value: (integer))
   (assign_local name: (identifier) value: (integer))
   (assign_field name: (field) value: (integer))
   (replace_local name: (identifier) value: (integer))
