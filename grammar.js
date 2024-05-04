@@ -591,6 +591,7 @@ module.exports = grammar({
         repeat(choice(
           $.interpolation,
           $.escape_sequence,
+          alias('$', $.string_content),
           alias(/[^'\$\\]+/, $.string_content),
         )),
         "'"
@@ -600,6 +601,7 @@ module.exports = grammar({
         repeat(choice(
           $.interpolation,
           $.escape_sequence,
+          alias('$', $.string_content),
           alias(/[^"\$\\]+/, $.string_content),
         )),
         '"'

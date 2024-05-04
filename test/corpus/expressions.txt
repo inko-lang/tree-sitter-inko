@@ -73,6 +73,7 @@ b'
 'a\"b'
 'a\\u'
 'a\0b'
+'a$10b'
 
 ---
 
@@ -88,7 +89,8 @@ b'
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (escape_sequence) (string_content))
-  (string (string_content) (escape_sequence) (string_content)))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (string_content) (string_content)))
 
 ===
 Double quoted strings
@@ -105,6 +107,7 @@ b"
 "a${10}b"
 "a\'b"
 "a\"b"
+"a$10b"
 
 ---
 
@@ -118,7 +121,8 @@ b"
   (string (string_content) (escape_sequence) (string_content))
   (string (string_content) (interpolation (integer)) (string_content))
   (string (string_content) (escape_sequence) (string_content))
-  (string (string_content) (escape_sequence) (string_content)))
+  (string (string_content) (escape_sequence) (string_content))
+  (string (string_content) (string_content) (string_content)))
 
 ===
 Variable references
