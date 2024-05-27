@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-inko",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Inko grammar for tree-sitter",
   "repository": "github:inko-lang/tree-sitter-inko",
   "license": "MPL-2.0",
