@@ -207,6 +207,9 @@ Type casts
 1 as A as B
 1 as A or 2 as B
 1 as A and 2 as B
+1 as A[ref B]
+1 as A[mut B]
+1 as A[uni B]
 
 ---
 
@@ -214,7 +217,10 @@ Type casts
   (cast (binary (integer) (integer)) (type))
   (cast (cast (integer) (type)) (type))
   (binary (cast (integer) (type)) (cast (integer) (type)))
-  (binary (cast (integer) (type)) (cast (integer) (type))))
+  (binary (cast (integer) (type)) (cast (integer) (type)))
+  (cast (integer) (generic_type (constant) (type_arguments (ref_type (type)))))
+  (cast (integer) (generic_type (constant) (type_arguments (mut_type (type)))))
+  (cast (integer) (generic_type (constant) (type_arguments (uni_type (type))))))
 
 ===
 Constant definitions

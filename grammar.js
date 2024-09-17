@@ -247,7 +247,7 @@ module.exports = grammar({
     // Type signatures
     _type: $ => choice(
       prec.left($.generic_type),
-      prec.left(alias($.constant, $.type)),
+      prec.right(alias($.constant, $.type)),
       $.ref_type,
       $.mut_type,
       $.uni_type,
