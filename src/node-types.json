@@ -5397,6 +5397,16 @@
           }
         ]
       },
+      "inline": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "inline",
+            "named": true
+          }
+        ]
+      },
       "modifier": {
         "multiple": false,
         "required": false,
@@ -8539,6 +8549,10 @@
   {
     "type": "import",
     "named": false
+  },
+  {
+    "type": "inline",
+    "named": true
   },
   {
     "type": "integer",

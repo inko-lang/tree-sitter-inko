@@ -79,6 +79,11 @@ class A {
   fn pub async mut example {}
   fn pub move example {}
   fn example[A: B + C + mut + D[A]] {}
+  fn inline example {}
+  fn inline mut example {}
+  fn inline move example {}
+  fn inline async example {}
+  fn pub inline example {}
 }
 
 ---
@@ -119,8 +124,19 @@ class A {
               (type)
               (mutable)
               (generic_type name: (constant) arguments: (type_arguments (type))))))
+        body: (block))
+      (method inline: (inline) name: (identifier) body: (block))
+      (method
+        inline: (inline) modifier: (modifier) name: (identifier) body: (block))
+      (method
+        inline: (inline) modifier: (modifier) name: (identifier) body: (block))
+      (method
+        inline: (inline) modifier: (modifier) name: (identifier) body: (block))
+      (method
+        visibility: (visibility)
+        inline: (inline)
+        name: (identifier)
         body: (block)))))
-
 ===
 Classes with cases
 ===

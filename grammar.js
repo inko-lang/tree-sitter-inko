@@ -103,6 +103,7 @@ module.exports = grammar({
     module_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
+      field('inline', optional($.inline)),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
@@ -175,6 +176,7 @@ module.exports = grammar({
     class_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
+      field('inline', optional($.inline)),
       field('modifier', optional(alias($._method_modifier, $.modifier))),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
@@ -196,6 +198,7 @@ module.exports = grammar({
     trait_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
+      field('inline', optional($.inline)),
       field('modifier', optional(alias($._trait_method_modifier, $.modifier))),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
@@ -624,6 +627,7 @@ module.exports = grammar({
     mutable: _ => 'mut',
     move: _ => 'move',
     visibility: _ => 'pub',
+    inline: _ => 'inline',
     line_comment: _ => token(prec(-1, seq('#', /.*/))),
     identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
     identifier_with_special: _ => /([a-z]|_)[a-zA-Z\d_\$]*\??/,

@@ -50,6 +50,10 @@ trait A {
   fn pub example {}
   fn pub move example {}
   fn example[A: B + C + mut + D[A]] {}
+  fn inline example
+  fn inline example {}
+  fn inline mut example {}
+  fn inline move example {}
 }
 
 ---
@@ -78,5 +82,16 @@ trait A {
               (type)
               (type)
               (mutable)
-              (generic_type name: (constant) arguments: (type_arguments (type))))))
+              (generic_type
+                name: (constant)
+                arguments: (type_arguments (type))))))
+        body: (block))
+      (method inline: (inline) name: (identifier))
+      (method inline: (inline) name: (identifier) body: (block))
+      (method
+        inline: (inline) modifier: (modifier) name: (identifier) body: (block))
+      (method
+        inline: (inline)
+        modifier: (modifier)
+        name: (identifier)
         body: (block)))))
