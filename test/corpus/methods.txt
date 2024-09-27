@@ -192,9 +192,12 @@ fn pub inline a {}
   (method name: (identifier) body: (block))
   (method name: (identifier) body: (block))
   (method name: (identifier) body: (block))
-  (method inline: (inline) name: (identifier) body: (block))
+  (method modifier: (modifier) name: (identifier) body: (block))
   (method
-    visibility: (visibility) inline: (inline) name: (identifier) body: (block)))
+    visibility: (visibility)
+    modifier: (modifier)
+    name: (identifier)
+    body: (block)))
 
 ===
 External functions

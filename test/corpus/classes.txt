@@ -125,16 +125,13 @@ class A {
               (mutable)
               (generic_type name: (constant) arguments: (type_arguments (type))))))
         body: (block))
-      (method inline: (inline) name: (identifier) body: (block))
-      (method
-        inline: (inline) modifier: (modifier) name: (identifier) body: (block))
-      (method
-        inline: (inline) modifier: (modifier) name: (identifier) body: (block))
-      (method
-        inline: (inline) modifier: (modifier) name: (identifier) body: (block))
+      (method modifier: (modifier) name: (identifier) body: (block))
+      (method modifier: (modifier) name: (identifier) body: (block))
+      (method modifier: (modifier) name: (identifier) body: (block))
+      (method modifier: (modifier) name: (identifier) body: (block))
       (method
         visibility: (visibility)
-        inline: (inline)
+        modifier: (modifier)
         name: (identifier)
         body: (block)))))
 ===

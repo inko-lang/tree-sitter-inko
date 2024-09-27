@@ -650,13 +650,18 @@
         },
         {
           "type": "FIELD",
-          "name": "inline",
+          "name": "modifier",
           "content": {
             "type": "CHOICE",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "inline"
+                "type": "ALIAS",
+                "content": {
+                  "type": "STRING",
+                  "value": "inline"
+                },
+                "named": true,
+                "value": "modifier"
               },
               {
                 "type": "BLANK"
@@ -1095,7 +1100,7 @@
         },
         {
           "type": "STRING",
-          "value": "async mut"
+          "value": "static"
         },
         {
           "type": "STRING",
@@ -1103,7 +1108,31 @@
         },
         {
           "type": "STRING",
-          "value": "static"
+          "value": "async mut"
+        },
+        {
+          "type": "STRING",
+          "value": "inline"
+        },
+        {
+          "type": "STRING",
+          "value": "inline mut"
+        },
+        {
+          "type": "STRING",
+          "value": "inline move"
+        },
+        {
+          "type": "STRING",
+          "value": "inline static"
+        },
+        {
+          "type": "STRING",
+          "value": "inline async"
+        },
+        {
+          "type": "STRING",
+          "value": "inline async mut"
         }
       ]
     },
@@ -1414,22 +1443,6 @@
         },
         {
           "type": "FIELD",
-          "name": "inline",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "inline"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        },
-        {
-          "type": "FIELD",
           "name": "modifier",
           "content": {
             "type": "CHOICE",
@@ -1648,22 +1661,6 @@
         },
         {
           "type": "FIELD",
-          "name": "inline",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "inline"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          }
-        },
-        {
-          "type": "FIELD",
           "name": "modifier",
           "content": {
             "type": "CHOICE",
@@ -1777,6 +1774,18 @@
         {
           "type": "STRING",
           "value": "move"
+        },
+        {
+          "type": "STRING",
+          "value": "inline"
+        },
+        {
+          "type": "STRING",
+          "value": "inline mut"
+        },
+        {
+          "type": "STRING",
+          "value": "inline move"
         }
       ]
     },
@@ -4925,10 +4934,6 @@
     "visibility": {
       "type": "STRING",
       "value": "pub"
-    },
-    "inline": {
-      "type": "STRING",
-      "value": "inline"
     },
     "line_comment": {
       "type": "TOKEN",

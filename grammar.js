@@ -103,7 +103,7 @@ module.exports = grammar({
     module_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
-      field('inline', optional($.inline)),
+      field('modifier', optional(alias('inline', $.modifier))),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
@@ -139,9 +139,15 @@ module.exports = grammar({
     _method_modifier: _ => choice(
       'mut',
       'move',
-      'async mut',
-      'async',
       'static',
+      'async',
+      'async mut',
+      'inline',
+      'inline mut',
+      'inline move',
+      'inline static',
+      'inline async',
+      'inline async mut',
     ),
 
     // Classes
@@ -176,7 +182,6 @@ module.exports = grammar({
     class_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
-      field('inline', optional($.inline)),
       field('modifier', optional(alias($._method_modifier, $.modifier))),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
@@ -198,7 +203,6 @@ module.exports = grammar({
     trait_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
-      field('inline', optional($.inline)),
       field('modifier', optional(alias($._trait_method_modifier, $.modifier))),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
@@ -206,7 +210,13 @@ module.exports = grammar({
       field('returns', optional($._returns)),
       field('body', optional($.block)),
     ),
-    _trait_method_modifier: _ => choice('mut', 'move'),
+    _trait_method_modifier: _ => choice(
+      'mut',
+      'move',
+      'inline',
+      'inline mut',
+      'inline move',
+    ),
     required_traits: $ => seq(':', list($._required_trait, '+', false)),
     _required_trait: $ => choice($.generic_type, alias($.constant, $.type)),
 
@@ -627,7 +637,6 @@ module.exports = grammar({
     mutable: _ => 'mut',
     move: _ => 'move',
     visibility: _ => 'pub',
-    inline: _ => 'inline',
     line_comment: _ => token(prec(-1, seq('#', /.*/))),
     identifier: _ => /([a-z]|_)[a-zA-Z\d_]*/,
     identifier_with_special: _ => /([a-z]|_)[a-zA-Z\d_\$]*\??/,
