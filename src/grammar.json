@@ -579,13 +579,8 @@
               "type": "CHOICE",
               "members": [
                 {
-                  "type": "SEQ",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": ","
-                    }
-                  ]
+                  "type": "STRING",
+                  "value": ","
                 },
                 {
                   "type": "SEQ",
@@ -910,13 +905,8 @@
       ]
     },
     "rest_argument": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "..."
-        }
-      ]
+      "type": "STRING",
+      "value": "..."
     },
     "_returns": {
       "type": "SEQ",
@@ -1219,6 +1209,10 @@
       "members": [
         {
           "type": "STRING",
+          "value": "inline"
+        },
+        {
+          "type": "STRING",
           "value": "async"
         },
         {
@@ -1227,11 +1221,28 @@
         },
         {
           "type": "STRING",
-          "value": "enum"
+          "value": "extern"
         },
         {
-          "type": "STRING",
-          "value": "extern"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "inline"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": "enum"
+            }
+          ]
         }
       ]
     },

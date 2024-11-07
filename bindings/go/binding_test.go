@@ -3,8 +3,8 @@ package tree_sitter_inko_test
 import (
 	"testing"
 
-	"github.com/inko-lang/tree-sitter-inko"
-	tree_sitter "github.com/smacker/go-tree-sitter"
+	tree_sitter "github.com/tree-sitter/go-tree-sitter"
+	tree_sitter_inko "github.com/tree-sitter/tree-sitter-inko/bindings/go"
 )
 
 func TestCanLoadGrammar(t *testing.T) {

@@ -38,20 +38,26 @@
   },
   "scripts": {
     "install": "node-gyp-build",
-    "prebuildify": "prebuildify --napi --strip",
-    "build": "tree-sitter generate --no-bindings",
-    "build-wasm": "tree-sitter build --wasm",
-    "test": "tree-sitter test",
-    "parse": "tree-sitter parse"
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js"
   },
   "tree-sitter": [
     {
       "scope": "source.inko",
       "injection-regex": "^inko$",
-      "file-types": ["inko"],
-      "highlights": ["queries/highlights.scm"],
-      "locals": ["queries/locals.scm"],
-      "tags": ["queries/tags.scm"]
+      "file-types": [
+        "inko"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ],
+      "locals": [
+        "queries/locals.scm"
+      ],
+      "tags": [
+        "queries/tags.scm"
+      ]
     }
   ]
 }

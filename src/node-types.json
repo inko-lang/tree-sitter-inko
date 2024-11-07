@@ -6837,11 +6837,6 @@
     }
   },
   {
-    "type": "rest_argument",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "return",
     "named": true,
     "fields": {},
@@ -8365,10 +8360,6 @@
     "named": false
   },
   {
-    "type": "...",
-    "named": false
-  },
-  {
     "type": "/",
     "named": false
   },
@@ -8619,6 +8610,10 @@
   {
     "type": "ref",
     "named": false
+  },
+  {
+    "type": "rest_argument",
+    "named": true
   },
   {
     "type": "return",

@@ -14,6 +14,9 @@ class A[A: B + C + mut + D[A], C] {}
 class A {
   # test
 }
+class inline A {}
+class pub inline A {}
+class pub inline enum A {}
 
 ----
 
@@ -45,7 +48,10 @@ class A {
           (generic_type name: (constant) arguments: (type_arguments (type)))))
       (type_parameter name: (constant)))
     body: (class_body))
-  (class name: (constant) body: (class_body (line_comment))))
+  (class name: (constant) body: (class_body (line_comment)))
+  (class modifier: (modifier) name: (constant) body: (class_body))
+  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
+  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body)))
 
 ===
 Classes with fields

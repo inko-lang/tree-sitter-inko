@@ -97,7 +97,7 @@ module.exports = grammar({
     extern_arguments: $ => seq(
       '(',
       optional(seq($.argument, repeat(seq(',', $.argument)))),
-      optional(choice(seq(','), seq(',', $.rest_argument, optional(',')))),
+      optional(choice(',', seq(',', $.rest_argument, optional(',')))),
       ')'
     ),
     module_method: $ => seq(
@@ -117,7 +117,7 @@ module.exports = grammar({
       ':',
       field('type', $._type),
     ),
-    rest_argument: _ => seq('...'),
+    rest_argument: _ => '...',
     _returns: $ => seq('->', $._type),
     type_parameters: $ => seq('[', comma_list($.type_parameter), ']'),
     type_parameter: $ => seq(
@@ -159,7 +159,13 @@ module.exports = grammar({
       field('type_parameters', optional($.type_parameters)),
       field('body', $.class_body),
     ),
-    _class_modifier: $ => choice('async', 'builtin', 'enum', 'extern'),
+    _class_modifier: $ => choice(
+      'inline',
+      'async',
+      'builtin',
+      'extern',
+      seq(optional('inline'), 'enum'),
+    ),
     class_body: $ => seq('{', repeat($._class_expression) , '}'),
     _class_expression: $ => choice(
       $.define_field,
