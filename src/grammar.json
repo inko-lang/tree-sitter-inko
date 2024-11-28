@@ -652,8 +652,8 @@
               {
                 "type": "ALIAS",
                 "content": {
-                  "type": "STRING",
-                  "value": "inline"
+                  "type": "SYMBOL",
+                  "name": "inline"
                 },
                 "named": true,
                 "value": "modifier"
@@ -1061,6 +1061,10 @@
         {
           "type": "SYMBOL",
           "name": "mutable"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "inline"
         },
         {
           "type": "SYMBOL",
@@ -4937,6 +4941,10 @@
     "mutable": {
       "type": "STRING",
       "value": "mut"
+    },
+    "inline": {
+      "type": "STRING",
+      "value": "inline"
     },
     "move": {
       "type": "STRING",

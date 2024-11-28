@@ -103,7 +103,7 @@ module.exports = grammar({
     module_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
-      field('modifier', optional(alias('inline', $.modifier))),
+      field('modifier', optional(alias($.inline, $.modifier))),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
@@ -133,6 +133,7 @@ module.exports = grammar({
     ),
     _type_parameter_requirement: $ => choice(
       $.mutable,
+      $.inline,
       $.generic_type,
       alias($.constant, $.type),
     ),
@@ -641,6 +642,7 @@ module.exports = grammar({
     break: _ => 'break',
     next: _ => 'next',
     mutable: _ => 'mut',
+    inline: _ => 'inline',
     move: _ => 'move',
     visibility: _ => 'pub',
     line_comment: _ => token(prec(-1, seq('#', /.*/))),

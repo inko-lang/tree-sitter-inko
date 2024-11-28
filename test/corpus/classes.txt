@@ -10,7 +10,7 @@ class extern A {}
 class enum A {}
 class pub async A {}
 class A[A] {}
-class A[A: B + C + mut + D[A], C] {}
+class A[A: B + C + mut + inline + D[A], C] {}
 class A {
   # test
 }
@@ -45,6 +45,7 @@ class pub inline enum A {}
           (type)
           (type)
           (mutable)
+          (inline)
           (generic_type name: (constant) arguments: (type_arguments (type)))))
       (type_parameter name: (constant)))
     body: (class_body))

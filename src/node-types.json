@@ -5013,6 +5013,11 @@
     }
   },
   {
+    "type": "inline",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "interpolation",
     "named": true,
     "fields": {},
@@ -6823,6 +6828,10 @@
       "types": [
         {
           "type": "generic_type",
+          "named": true
+        },
+        {
+          "type": "inline",
           "named": true
         },
         {
