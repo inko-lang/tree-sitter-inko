@@ -133,7 +133,7 @@ module.exports = grammar({
     ),
     _type_parameter_requirement: $ => choice(
       $.mutable,
-      $.inline,
+      $.copy,
       $.generic_type,
       alias($.constant, $.type),
     ),
@@ -161,11 +161,12 @@ module.exports = grammar({
       field('body', $.class_body),
     ),
     _class_modifier: $ => choice(
-      'inline',
       'async',
       'builtin',
+      'copy',
       'extern',
-      seq(optional('inline'), 'enum'),
+      'inline',
+      seq(optional(choice('inline', 'copy')), 'enum'),
     ),
     class_body: $ => seq('{', repeat($._class_expression) , '}'),
     _class_expression: $ => choice(
@@ -643,6 +644,7 @@ module.exports = grammar({
     next: _ => 'next',
     mutable: _ => 'mut',
     inline: _ => 'inline',
+    copy: _ => 'copy',
     move: _ => 'move',
     visibility: _ => 'pub',
     line_comment: _ => token(prec(-1, seq('#', /.*/))),

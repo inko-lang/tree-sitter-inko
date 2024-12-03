@@ -10,10 +10,13 @@ class extern A {}
 class enum A {}
 class pub async A {}
 class A[A] {}
-class A[A: B + C + mut + inline + D[A], C] {}
+class A[A: B + C + mut + copy + D[A], C] {}
 class A {
   # test
 }
+class copy A {}
+class pub copy A {}
+class pub copy enum A {}
 class inline A {}
 class pub inline A {}
 class pub inline enum A {}
@@ -45,11 +48,14 @@ class pub inline enum A {}
           (type)
           (type)
           (mutable)
-          (inline)
+          (copy)
           (generic_type name: (constant) arguments: (type_arguments (type)))))
       (type_parameter name: (constant)))
     body: (class_body))
   (class name: (constant) body: (class_body (line_comment)))
+  (class modifier: (modifier) name: (constant) body: (class_body))
+  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
+  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
   (class modifier: (modifier) name: (constant) body: (class_body))
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body)))
