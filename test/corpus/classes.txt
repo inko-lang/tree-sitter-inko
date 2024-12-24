@@ -2,24 +2,25 @@
 Classes
 ===
 
-class A {}
-class pub A {}
-class async A {}
-class builtin A {}
-class extern A {}
-class enum A {}
-class pub async A {}
-class A[A] {}
-class A[A: B + C + mut + copy + D[A], C] {}
-class A {
+type A {}
+type pub A {}
+type async A {}
+type builtin A {}
+type extern A {}
+type enum A {}
+type pub async A {}
+type A[A] {}
+type A[A: B + C + mut + copy + D[A], C] {}
+type A {
   # test
 }
-class copy A {}
-class pub copy A {}
-class pub copy enum A {}
-class inline A {}
-class pub inline A {}
-class pub inline enum A {}
+type copy A {}
+type pub copy A {}
+type pub copy enum A {}
+type inline A {}
+type pub inline A {}
+type pub inline enum A {}
+class A {}
 
 ----
 
@@ -58,7 +59,8 @@ class pub inline enum A {}
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
   (class modifier: (modifier) name: (constant) body: (class_body))
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
-  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body)))
+  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
+  (class name: (constant) body: (class_body)))
 
 ===
 Classes with fields
