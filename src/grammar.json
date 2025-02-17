@@ -1134,17 +1134,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "class"
-            },
-            {
-              "type": "STRING",
-              "value": "type"
-            }
-          ]
+          "type": "STRING",
+          "value": "type"
         },
         {
           "type": "FIELD",

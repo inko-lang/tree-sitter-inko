@@ -153,7 +153,7 @@ module.exports = grammar({
 
     // Classes
     class: $ => seq(
-      choice('class', 'type'),
+      'type',
       field('visibility', optional($.visibility)),
       field('modifier', optional(alias($._class_modifier, $.modifier))),
       field('name', $.constant),

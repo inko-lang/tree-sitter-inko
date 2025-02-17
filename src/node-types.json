@@ -8485,10 +8485,6 @@
     "named": false
   },
   {
-    "type": "class",
-    "named": false
-  },
-  {
     "type": "constant",
     "named": true
   },

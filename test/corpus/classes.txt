@@ -20,7 +20,6 @@ type pub copy enum A {}
 type inline A {}
 type pub inline A {}
 type pub inline enum A {}
-class A {}
 
 ----
 
@@ -59,14 +58,13 @@ class A {}
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
   (class modifier: (modifier) name: (constant) body: (class_body))
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
-  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
-  (class name: (constant) body: (class_body)))
+  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body)))
 
 ===
 Classes with fields
 ===
 
-class A {
+type A {
   let @a: A
   let @b: B
   let pub @c: C
@@ -86,7 +84,7 @@ class A {
 Classes with methods
 ===
 
-class A {
+type A {
   fn example {}
   fn pub example {}
   fn pub static example {}
@@ -153,7 +151,7 @@ class A {
 Classes with cases
 ===
 
-class A {
+type A {
   case A
   case B(A, B,)
 }
