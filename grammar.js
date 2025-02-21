@@ -323,6 +323,7 @@ module.exports = grammar({
       $.if,
       $.while,
       $.loop,
+      $.for,
       $.match,
       $.ref,
       $.mut,
@@ -475,6 +476,13 @@ module.exports = grammar({
       field('body', $.block),
     ),
     loop: $ => seq('loop', field('body', $.block)),
+    for: $ => seq(
+      'for',
+      field('pattern', $._pattern),
+      'in',
+      field('iterator', $._expression),
+      field('body', $.block),
+    ),
 
     // Pattern matching
     match: $ => seq(

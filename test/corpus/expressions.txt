@@ -398,12 +398,22 @@ Loops
 
 while true {}
 loop {}
+for num in nums { num }
+for (a, b) in foo { a }
 
 ---
 
 (source_file
   (while condition: (true) body: (block))
-  (loop body: (block)))
+  (loop body: (block))
+  (for
+    pattern: (identifier_pattern)
+    iterator: (identifier)
+    body: (block (identifier)))
+  (for
+    pattern: (tuple_pattern (identifier_pattern) (identifier_pattern))
+    iterator: (identifier)
+    body: (block (identifier))))
 
 ===
 Pattern matching
