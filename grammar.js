@@ -517,10 +517,12 @@ module.exports = grammar({
       $.or_pattern,
       $.boolean_pattern,
       $.mutable_pattern,
+      $.array_pattern,
     ),
     mutable_pattern: $ => seq('mut', alias($.identifier, $.identifier_pattern)),
     wildcard_pattern: $ => '_',
     tuple_pattern: $ => seq('(', comma_list($._pattern), ')'),
+    array_pattern: $ => seq('[', comma_list($._pattern), ']'),
     enum_pattern: $ => seq(
       field('name', $.constant),
       field('arguments', alias($.enum_pattern_arguments, $.arguments)),
