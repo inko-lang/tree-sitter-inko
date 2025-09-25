@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-inko
-        VERSION "0.1.0"
+        VERSION "0.2.0"
         DESCRIPTION "A parser for the Inko programming language"
         HOMEPAGE_URL "https://github.com/inko-lang/tree-sitter-inko/"
         LANGUAGES C)
