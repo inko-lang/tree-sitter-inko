@@ -37,10 +37,10 @@ jobs:
           - windows-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up tree-sitter
-        uses: tree-sitter/setup-action/cli@v1
+        uses: tree-sitter/setup-action/cli@c4c258862a6a7e43a7aef152256bbf659972c408
       - name: Run tests
-        uses: tree-sitter/parser-test-action@v2
+        uses: tree-sitter/parser-test-action@aba4a3de737f86f8ce83be38166a1ab521d4c960
         with:
           test-rust: ${{runner.os == 'Linux'}}
