@@ -438,7 +438,6 @@ match x { case 1 if true -> {} }
 match x { case true -> {} }
 match x { case false -> {} }
 match x { case a.B -> {} }
-match x { case [1,2] -> {} }
 
 ---
 
@@ -534,12 +533,6 @@ match x { case [1,2] -> {} }
     cases: (cases
       (case
         pattern: (constant_pattern receiver: (identifier) name: (constant))
-        body: (block))))
-  (match
-    value: (identifier)
-    cases: (cases
-      (case
-        pattern: (array_pattern (integer_pattern) (integer_pattern))
         body: (block)))))
 
 ===
