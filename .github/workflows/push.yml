@@ -4,21 +4,7 @@ on:
   push:
     branches:
       - '**'
-    paths:
-      - grammar.js
-      - src/**
-      - test/**
-      - bindings/**
-      - binding.gyp
-      - .github/**
   pull_request:
-    paths:
-      - grammar.js
-      - src/**
-      - test/**
-      - bindings/**
-      - binding.gyp
-      - .github/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
