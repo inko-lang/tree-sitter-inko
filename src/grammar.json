@@ -2367,6 +2367,27 @@
           },
           {
             "type": "FIELD",
+            "name": "modifier",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "move"
+                  },
+                  "named": true,
+                  "value": "modifier"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          },
+          {
+            "type": "FIELD",
             "name": "arguments",
             "content": {
               "type": "CHOICE",

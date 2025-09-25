@@ -4591,6 +4591,16 @@
           }
         ]
       },
+      "modifier": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "modifier",
+            "named": true
+          }
+        ]
+      },
       "returns": {
         "multiple": true,
         "required": false,

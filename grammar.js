@@ -288,6 +288,7 @@ module.exports = grammar({
     fn_type: $ => prec.right(
       seq(
         'fn',
+        field('modifier', optional(alias($.move, $.modifier))),
         field('arguments', optional(alias($.fn_type_arguments, $.arguments))),
         field('returns', optional($._returns)),
       )
