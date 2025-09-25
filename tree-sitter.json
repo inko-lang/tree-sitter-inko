@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "inko",
+      "camelcase": "Inko",
+      "title": "Inko",
+      "scope": "source.inko",
+      "file-types": [
+        "inko"
+      ],
+      "injection-regex": "^inko$",
+      "class-name": "TreeSitterInko"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MPL-2.0",
+    "description": "A parser for the Inko programming language",
+    "authors": [
+      {
+        "name": "Yorick Peterse",
+        "url": "https://yorickpeterse.com/"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/inko-lang/tree-sitter-inko/",
+      "funding": "https://github.com/sponsors/yorickpeterse"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
