@@ -177,6 +177,7 @@ module.exports = grammar({
     define_field: $ => seq(
       'let',
       field('visibility', optional($.visibility)),
+      field('modifier', optional(alias($.mutable, $.modifier))),
       field('name', $.field),
       ':',
       field('type', $._type),

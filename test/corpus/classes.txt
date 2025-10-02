@@ -68,6 +68,7 @@ type A {
   let @a: A
   let @b: B
   let pub @c: C
+  let pub mut @d: C
 }
 
 ---
@@ -78,7 +79,12 @@ type A {
     body: (class_body
       (define_field name: (field) type: (type))
       (define_field name: (field) type: (type))
-      (define_field visibility: (visibility) name: (field) type: (type)))))
+      (define_field visibility: (visibility) name: (field) type: (type))
+      (define_field
+        visibility: (visibility)
+        modifier: (modifier)
+        name: (field)
+        type: (type)))))
 
 ===
 Classes with methods
