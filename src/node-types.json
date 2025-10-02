@@ -82,6 +82,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -337,6 +345,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -515,6 +531,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -697,6 +721,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -886,6 +918,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -1052,6 +1092,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -1200,6 +1248,364 @@
     }
   },
   {
+    "type": "async",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "define_variable",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "grouped_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "throw",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "try",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "await",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "array",
+          "named": true
+        },
+        {
+          "type": "assign_field",
+          "named": true
+        },
+        {
+          "type": "assign_local",
+          "named": true
+        },
+        {
+          "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
+          "type": "binary",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "break",
+          "named": true
+        },
+        {
+          "type": "call",
+          "named": true
+        },
+        {
+          "type": "cast",
+          "named": true
+        },
+        {
+          "type": "closure",
+          "named": true
+        },
+        {
+          "type": "compound_assign_field",
+          "named": true
+        },
+        {
+          "type": "compound_assign_local",
+          "named": true
+        },
+        {
+          "type": "compound_assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "define_variable",
+          "named": true
+        },
+        {
+          "type": "false",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "for",
+          "named": true
+        },
+        {
+          "type": "grouped_expression",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "if",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "loop",
+          "named": true
+        },
+        {
+          "type": "match",
+          "named": true
+        },
+        {
+          "type": "mut",
+          "named": true
+        },
+        {
+          "type": "next",
+          "named": true
+        },
+        {
+          "type": "nil",
+          "named": true
+        },
+        {
+          "type": "recover",
+          "named": true
+        },
+        {
+          "type": "ref",
+          "named": true
+        },
+        {
+          "type": "replace_field",
+          "named": true
+        },
+        {
+          "type": "replace_local",
+          "named": true
+        },
+        {
+          "type": "return",
+          "named": true
+        },
+        {
+          "type": "self",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "throw",
+          "named": true
+        },
+        {
+          "type": "true",
+          "named": true
+        },
+        {
+          "type": "try",
+          "named": true
+        },
+        {
+          "type": "tuple",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "binary",
     "named": true,
     "fields": {
@@ -1221,6 +1627,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -1476,6 +1890,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -1645,6 +2067,14 @@
         },
         {
           "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
           "named": true
         },
         {
@@ -1889,6 +2319,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -2061,6 +2499,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -2224,6 +2670,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -2465,6 +2919,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -2860,6 +3322,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -3039,6 +3509,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -3232,6 +3710,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -3395,6 +3881,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -3634,6 +4128,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -3945,6 +4447,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -4130,6 +4640,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -4609,6 +5127,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -4857,6 +5383,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -5044,6 +5578,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -5372,6 +5914,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -5566,6 +6116,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -5898,6 +6456,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -6143,6 +6709,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -6385,6 +6959,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -6553,6 +7135,14 @@
         },
         {
           "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
           "named": true
         },
         {
@@ -6832,6 +7422,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -7011,6 +7609,14 @@
           },
           {
             "type": "assign_receiver_field",
+            "named": true
+          },
+          {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
             "named": true
           },
           {
@@ -7232,6 +7838,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -7401,6 +8015,14 @@
         },
         {
           "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
           "named": true
         },
         {
@@ -7699,6 +8321,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -7946,6 +8576,14 @@
           "named": true
         },
         {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
+          "named": true
+        },
+        {
           "type": "binary",
           "named": true
         },
@@ -8114,6 +8752,14 @@
         },
         {
           "type": "assign_receiver_field",
+          "named": true
+        },
+        {
+          "type": "async",
+          "named": true
+        },
+        {
+          "type": "await",
           "named": true
         },
         {
@@ -8524,6 +9170,14 @@
             "named": true
           },
           {
+            "type": "async",
+            "named": true
+          },
+          {
+            "type": "await",
+            "named": true
+          },
+          {
             "type": "binary",
             "named": true
           },
@@ -8860,6 +9514,10 @@
     "named": false
   },
   {
+    "type": "await",
+    "named": false
+  },
+  {
     "type": "break",
     "named": true
   },
@@ -9050,11 +9708,11 @@
   },
   {
     "type": "type",
-    "named": false
+    "named": true
   },
   {
     "type": "type",
-    "named": true
+    "named": false
   },
   {
     "type": "uni",

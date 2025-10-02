@@ -2648,6 +2648,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "async"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "await"
+        },
+        {
+          "type": "SYMBOL",
           "name": "throw"
         },
         {
@@ -3631,6 +3639,32 @@
         {
           "type": "STRING",
           "value": "throw"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        }
+      ]
+    },
+    "async": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "async"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
+        }
+      ]
+    },
+    "await": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "await"
         },
         {
           "type": "SYMBOL",

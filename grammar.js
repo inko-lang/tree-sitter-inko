@@ -318,6 +318,8 @@ module.exports = grammar({
       $.return,
       $.next,
       $.try,
+      $.async,
+      $.await,
       $.throw,
       $.closure,
       $.field,
@@ -454,6 +456,8 @@ module.exports = grammar({
     )),
     try: $ => seq('try', $._expression),
     throw: $ => seq('throw', $._expression),
+    async: $ => seq('async', $._expression),
+    await: $ => seq('await', $._expression),
 
     if: $ => seq(
       'if',

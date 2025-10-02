@@ -33,6 +33,8 @@
 [
   "and"
   "as"
+  "async"
+  "await"
   "case"
   "else"
   "enum"

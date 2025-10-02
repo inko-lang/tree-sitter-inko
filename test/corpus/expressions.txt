@@ -318,6 +318,8 @@ return return 10
 next
 try 10
 throw 10
+async 10
+await 10
 
 ---
 
@@ -330,7 +332,9 @@ throw 10
   (return (return (integer)))
   (next)
   (try (integer))
-  (throw (integer)))
+  (throw (integer))
+  (async (integer))
+  (await (integer)))
 
 ===
 Closures
