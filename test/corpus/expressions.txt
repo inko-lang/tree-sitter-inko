@@ -145,6 +145,17 @@ Foo
 (source_file (identifier) (constant) (field))
 
 ===
+Unary operations
+===
+
+!10
+
+---
+
+(source_file
+  (not (integer)))
+
+===
 Binary operations
 ===
 

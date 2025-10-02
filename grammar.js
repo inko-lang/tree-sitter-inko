@@ -300,6 +300,7 @@ module.exports = grammar({
     // Expressions
     block: $ => seq('{', repeat($._expression), '}'),
     _expression: $ => choice(
+      $.not,
       $.binary,
       $.define_variable,
       $.float,
@@ -345,6 +346,7 @@ module.exports = grammar({
       $.compound_assign_field,
       $.compound_assign_receiver_field,
     ),
+    not: $ => seq('!', $._expression),
 
     // Assignments
     assign_receiver_field: $ => prec.right(

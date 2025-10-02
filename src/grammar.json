@@ -2588,6 +2588,10 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "not"
+        },
+        {
+          "type": "SYMBOL",
           "name": "binary"
         },
         {
@@ -2775,6 +2779,19 @@
         {
           "type": "SYMBOL",
           "name": "compound_assign_receiver_field"
+        }
+      ]
+    },
+    "not": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "!"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
         }
       ]
     },
