@@ -462,12 +462,15 @@ module.exports = grammar({
     async: $ => seq('async', $._expression),
     await: $ => seq('await', $._expression),
 
-    if: $ => seq(
-      'if',
-      field('condition', $._expression),
-      field('consequence', $.block),
-      repeat(field('alternative', $.else_if)),
-      field('alternative', optional($.else)),
+    if: $ => prec.left(
+      0,
+      seq(
+        'if',
+        field('condition', $._expression),
+        field('consequence', $.block),
+        repeat(field('alternative', $.else_if)),
+        field('alternative', optional($.else)),
+      )
     ),
     else_if: $ => seq(
       'else',
@@ -514,7 +517,7 @@ module.exports = grammar({
     ),
     _pattern: $ => choice(
       $.wildcard_pattern,
-      alias($.identifier, $.identifier_pattern),
+      $.identifier_pattern,
       alias($.integer, $.integer_pattern),
       alias($.string, $.string_pattern),
       alias($.constant, $.constant_pattern),
@@ -524,8 +527,12 @@ module.exports = grammar({
       $.tuple_pattern,
       $.or_pattern,
       $.boolean_pattern,
-      $.mutable_pattern,
       $.array_pattern,
+    ),
+    identifier_pattern: $ => seq(
+      field('modifier', optional(alias($.mutable, $.modifier))),
+      field('name', $.identifier),
+      field('type', optional(seq(':', $._type))),
     ),
     mutable_pattern: $ => seq('mut', alias($.identifier, $.identifier_pattern)),
     wildcard_pattern: $ => '_',
@@ -571,22 +578,24 @@ module.exports = grammar({
     ),
 
     // let definitions
-    define_constant: $ => seq(
-      'let',
-      field('visibility', optional($.visibility)),
-      field('name', $.constant),
-      '=',
-      field('value', $._expression),
-    ),
-    define_variable: $ => prec.left(
-      0,
+    define_constant: $ => prec.left(
+      2,
       seq(
         'let',
-        field('modifier', optional(alias($.mutable, $.modifier))),
-        field('name', $.identifier),
-        field('type', optional(seq(':', $._type))),
+        field('visibility', optional($.visibility)),
+        field('name', $.constant),
         '=',
         field('value', $._expression),
+      )
+    ),
+    define_variable: $ => prec.left(
+      1,
+      seq(
+        'let',
+        field('pattern', $._pattern),
+        '=',
+        field('value', $._expression),
+        field('else', optional(seq('else', $._expression))),
       ),
     ),
 

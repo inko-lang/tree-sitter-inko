@@ -256,16 +256,47 @@ Variable definitions
 let a = 10
 let a: Int = 10
 let mut a = 10
+let mut a: Int = 10
 let a = 1 + 2
+let (a, b) = 10
+let a = 10 else 20
+let b = 10 else if true { 10 } else { 20 }
 
 ---
 
 (source_file
-  (define_variable name: (identifier) value: (integer))
-  (define_variable name: (identifier) type: (type) value: (integer))
-  (define_variable modifier: (modifier) name: (identifier) value: (integer))
+  (define_variable pattern: (identifier_pattern name: (identifier))
+    value: (integer))
+  (define_variable pattern: (identifier_pattern name: (identifier) type: (type))
+    value: (integer))
   (define_variable
-    name: (identifier) value: (binary left: (integer) right: (integer))))
+    pattern: (identifier_pattern modifier: (modifier) name: (identifier))
+    value: (integer))
+  (define_variable
+    pattern: (identifier_pattern
+      modifier: (modifier)
+      name: (identifier)
+      type: (type))
+    value: (integer))
+  (define_variable
+    pattern: (identifier_pattern name: (identifier))
+    value: (binary left: (integer) right: (integer)))
+  (define_variable
+    pattern: (tuple_pattern
+      (identifier_pattern name: (identifier))
+      (identifier_pattern name: (identifier)))
+    value: (integer))
+  (define_variable
+    pattern: (identifier_pattern name: (identifier))
+    value: (integer)
+    else: (integer))
+  (define_variable
+    pattern: (identifier_pattern name: (identifier))
+    value: (integer)
+    else: (if
+      condition: (true)
+      consequence: (block (integer))
+      alternative: (else body: (block (integer))))))
 
 ===
 Grouped expressions
@@ -422,11 +453,13 @@ for (a, b) in foo { a }
   (while condition: (true) body: (block))
   (loop body: (block))
   (for
-    pattern: (identifier_pattern)
+    pattern: (identifier_pattern name: (identifier))
     iterator: (identifier)
     body: (block (identifier)))
   (for
-    pattern: (tuple_pattern (identifier_pattern) (identifier_pattern))
+    pattern: (tuple_pattern
+      (identifier_pattern name: (identifier))
+      (identifier_pattern name: (identifier)))
     iterator: (identifier)
     body: (block (identifier))))
 
@@ -475,11 +508,13 @@ match x { case [1,2] -> {} }
   (match
     value: (identifier)
     cases: (cases
-      (case pattern: (identifier_pattern) body: (block))))
+      (case pattern: (identifier_pattern name: (identifier)) body: (block))))
   (match
     value: (identifier)
     cases: (cases
-      (case pattern: (mutable_pattern (identifier_pattern)) body: (block))))
+      (case
+        pattern: (identifier_pattern modifier: (modifier) name: (identifier))
+        body: (block))))
   (match
     value: (identifier)
     cases: (cases
