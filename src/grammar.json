@@ -2762,6 +2762,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "replace_receiver_field"
+        },
+        {
+          "type": "SYMBOL",
           "name": "replace_local"
         },
         {
@@ -2824,6 +2828,47 @@
           {
             "type": "STRING",
             "value": "="
+          },
+          {
+            "type": "FIELD",
+            "name": "value",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "replace_receiver_field": {
+      "type": "PREC_RIGHT",
+      "value": 3,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "receiver",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "."
+          },
+          {
+            "type": "FIELD",
+            "name": "name",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_call_name"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ":="
           },
           {
             "type": "FIELD",

@@ -340,6 +340,7 @@ module.exports = grammar({
       $.assign_receiver_field,
       $.assign_local,
       $.assign_field,
+      $.replace_receiver_field,
       $.replace_local,
       $.replace_field,
       $.compound_assign_local,
@@ -356,6 +357,16 @@ module.exports = grammar({
         '.',
         field('name', $._call_name),
         '=',
+        field('value', $._expression)
+      )
+    ),
+    replace_receiver_field: $ => prec.right(
+      3,
+      seq(
+        field('receiver', $._expression),
+        '.',
+        field('name', $._call_name),
+        ':=',
         field('value', $._expression)
       )
     ),

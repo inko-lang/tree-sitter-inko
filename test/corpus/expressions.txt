@@ -261,6 +261,8 @@ let a = 1 + 2
 let (a, b) = 10
 let a = 10 else 20
 let b = 10 else if true { 10 } else { 20 }
+let a = x := y else z
+let a = x.y := y else z
 
 ---
 
@@ -296,7 +298,18 @@ let b = 10 else if true { 10 } else { 20 }
     else: (if
       condition: (true)
       consequence: (block (integer))
-      alternative: (else body: (block (integer))))))
+      alternative: (else body: (block (integer)))))
+  (define_variable
+    pattern: (identifier_pattern name: (identifier))
+    value: (replace_local name: (identifier) value: (identifier))
+    else: (identifier))
+  (define_variable
+    pattern: (identifier_pattern name: (identifier))
+    value: (replace_receiver_field
+      receiver: (identifier)
+      name: (name)
+      value: (identifier))
+    else: (identifier)))
 
 ===
 Grouped expressions
@@ -700,6 +713,7 @@ a = 1
 @a = 1
 a := 1
 @a := 1
+a.b := 1
 
 ---
 
@@ -714,7 +728,8 @@ a := 1
   (assign_local name: (identifier) value: (integer))
   (assign_field name: (field) value: (integer))
   (replace_local name: (identifier) value: (integer))
-  (replace_field name: (field) value: (integer)))
+  (replace_field name: (field) value: (integer))
+  (replace_receiver_field receiver: (identifier) name: (name) value: (integer)))
 
 ===
 Compound assignments
