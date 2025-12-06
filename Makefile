@@ -115,6 +115,9 @@ test:
 .check-version:
 	@test $${VERSION?The VERSION variable must be set}
 
+release/update-makefile: .check-version
+	sed -E -i -e 's/^VERSION := ([0-9\.]+)$$/VERSION := ${VERSION}/' Makefile
+
 release/changelog: .check-version
 	clogs "${VERSION}"
 
@@ -127,6 +130,6 @@ release/tag: .check-version
 	git tag -a -m "Release v${VERSION}" "v${VERSION}"
 	git push origin "v${VERSION}"
 
-release: release/changelog release/commit release/tag
+release: release/update-makefile release/changelog release/commit release/tag
 
-.PHONY: release/changelog release/commit release/tag release
+.PHONY: release/update-makefile release/changelog release/commit release/tag release
