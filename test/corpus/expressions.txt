@@ -298,7 +298,7 @@ let a = x.y := y else z
     else: (if
       condition: (true)
       consequence: (block (integer))
-      alternative: (else body: (block (integer)))))
+      alternative: (else (block (integer)))))
   (define_variable
     pattern: (identifier_pattern name: (identifier))
     value: (replace_local name: (identifier) value: (identifier))
@@ -444,14 +444,17 @@ if true {} else {}
   (if
     condition: (true)
     consequence: (block)
-    alternative: (else_if condition: (true) consequence: (block)))
+    alternative: (else (if condition: (true) consequence: (block))))
   (if
     condition: (true)
     consequence: (block)
-    alternative: (else_if condition: (true) consequence: (block))
-    alternative: (else body: (block)))
+    alternative: (else
+      (if
+        condition: (true)
+        consequence: (block)
+        alternative: (else (block)))))
   (if condition: (constant) consequence: (block))
-  (if condition: (true) consequence: (block) alternative: (else body: (block))))
+  (if condition: (true) consequence: (block) alternative: (else (block))))
 
 ===
 Loops

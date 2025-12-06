@@ -479,17 +479,10 @@ module.exports = grammar({
         'if',
         field('condition', $._expression),
         field('consequence', $.block),
-        repeat(field('alternative', $.else_if)),
         field('alternative', optional($.else)),
       )
     ),
-    else_if: $ => seq(
-      'else',
-      'if',
-      field('condition', $._expression),
-      field('consequence', $.block),
-    ),
-    else: $ => seq('else', field('body', $.block)),
+    else: $ => seq('else', choice($.block, $.if)),
 
     // Loops
     while: $ => seq(
