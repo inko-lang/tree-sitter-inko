@@ -1233,6 +1233,10 @@
           "value": "inline"
         },
         {
+          "type": "STRING",
+          "value": "ref"
+        },
+        {
           "type": "SEQ",
           "members": [
             {
@@ -1248,6 +1252,10 @@
                     {
                       "type": "STRING",
                       "value": "copy"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "ref"
                     }
                   ]
                 },

@@ -20,6 +20,8 @@ type pub copy enum A {}
 type inline A {}
 type pub inline A {}
 type pub inline enum A {}
+type ref A {}
+type ref enum A {}
 
 ----
 
@@ -58,7 +60,9 @@ type pub inline enum A {}
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
   (class modifier: (modifier) name: (constant) body: (class_body))
   (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
-  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body)))
+  (class visibility: (visibility) modifier: (modifier) name: (constant) body: (class_body))
+  (class modifier: (modifier) name: (constant) body: (class_body))
+  (class modifier: (modifier) name: (constant) body: (class_body)))
 
 ===
 Classes with fields

@@ -166,7 +166,8 @@ module.exports = grammar({
       'copy',
       'extern',
       'inline',
-      seq(optional(choice('inline', 'copy')), 'enum'),
+      'ref',
+      seq(optional(choice('inline', 'copy', 'ref')), 'enum'),
     ),
     class_body: $ => seq('{', repeat($._class_expression) , '}'),
     _class_expression: $ => choice(
