@@ -1,6 +1,12 @@
 <!-- This changelog is managed by https://github.com/yorickpeterse/clogs -->
 # Changelog
 
+## 0.5.1 (2026-01-09)
+
+### Fixed
+
+- [Fix parsing of floats with exponents and decimals](https://github.com/inko-lang/inko/commit/245e64a5ae8abc01e32eb0d473560c7ca4c1ebe6)
+
 ## 0.5.0 (2026-01-09)
 
 ### Added
