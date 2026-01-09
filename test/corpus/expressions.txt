@@ -24,10 +24,23 @@ Floats
 1e2
 1e+2
 1E+2
+1.0e2
+1.0e+2
+1.0E+2
 
 ---
 
-(source_file (float) (float) (float) (float) (float) (float) (float))
+(source_file
+  (float)
+  (float)
+  (float)
+  (float)
+  (float)
+  (float)
+  (float)
+  (float)
+  (float)
+  (float))
 
 ===
 Keyword expressions

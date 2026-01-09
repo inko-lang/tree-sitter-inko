@@ -5091,8 +5091,17 @@
       }
     },
     "float": {
-      "type": "PATTERN",
-      "value": "-?\\d[\\d_]*((e|E)(\\+|-)?|\\.)[\\d_]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "-?\\d[\\d_]*\\.[\\d_]+((e|E)(\\+|-)?[\\d_]+)?"
+        },
+        {
+          "type": "PATTERN",
+          "value": "-?\\d[\\d_]*(e|E)(\\+|-)?[\\d_]+"
+        }
+      ]
     },
     "integer": {
       "type": "PATTERN",
