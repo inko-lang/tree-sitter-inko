@@ -23,6 +23,9 @@ import foo (A,)
 import foo (A, B)
 import foo (A, B,)
 import foo (self)
+import foo (bar)
+import foo (bar?)
+import foo (bar$)
 
 ---
 
@@ -32,7 +35,10 @@ import foo (self)
   (import path: (path (identifier)) symbols: (symbols (constant)))
   (import path: (path (identifier)) symbols: (symbols (constant) (constant)))
   (import path: (path (identifier)) symbols: (symbols (constant) (constant)))
-  (import path: (path (identifier)) symbols: (symbols (self))))
+  (import path: (path (identifier)) symbols: (symbols (self)))
+  (import path: (path (identifier)) symbols: (symbols (identifier)))
+  (import path: (path (identifier)) symbols: (symbols (identifier)))
+  (import path: (path (identifier)) symbols: (symbols (identifier))))
 
 ===
 Imports with aliases
@@ -41,6 +47,7 @@ Imports with aliases
 import foo (self as alias)
 import foo (A as B)
 import foo (a as b)
+import foo (a? as b?)
 
 ---
 
@@ -51,6 +58,9 @@ import foo (a as b)
   (import
     path: (path (identifier))
     symbols: (symbols (import_as name: (constant) alias: (constant))))
+  (import
+    path: (path (identifier))
+    symbols: (symbols (import_as name: (identifier) alias: (identifier))))
   (import
     path: (path (identifier))
     symbols: (symbols (import_as name: (identifier) alias: (identifier)))))

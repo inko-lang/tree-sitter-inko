@@ -60,12 +60,25 @@ module.exports = grammar({
     path: $ => seq($.identifier, repeat(seq('.', $.identifier))),
     symbols: $ => seq(
       '(',
-      comma_list(choice($.import_as, $.self, $.constant, $.identifier)),
+      comma_list(choice(
+        $.import_as,
+        $.self,
+        $.constant,
+        $.identifier,
+        alias($.identifier_with_special, $.identifier),
+      )),
       ')'
     ),
     import_as: $ => choice(
       import_as($.self, $.identifier),
-      import_as($.identifier, $.identifier),
+      import_as(
+        alias($.identifier, $.identifier),
+        alias($.identifier, $.identifier),
+      ),
+      import_as(
+        alias($.identifier_with_special, $.identifier),
+        alias($.identifier_with_special, $.identifier),
+      ),
       import_as($.constant, $.constant),
     ),
     tags: $ => prec.right(seq('if', list($.identifier, 'and', false))),
@@ -414,7 +427,7 @@ module.exports = grammar({
 
     // Method calls
     _call_name: $ => choice(
-      // Identifiers are aliased as "name" such that highliths don't conflict
+      // Identifiers are aliased as "name" such that highlights don't conflict
       // with locals (e.g. ensuring `name` in `self.name` doesn't get
       // highlighted as a variable if a local variable with the same name
       // exists).
