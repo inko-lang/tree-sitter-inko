@@ -51,6 +51,8 @@ fn a$b {}
 fn inline a {}
 fn pub inline a {}
 fn example(a: fn move) {}
+fn noinline a {}
+fn pub noinline a {}
 
 ---
 
@@ -205,6 +207,15 @@ fn example(a: fn move) {}
       (arguments (argument
         name: (identifier)
         type: (fn_type modifier: (modifier))))
+    body: (block))
+  (method
+    modifier: (modifier)
+    name: (identifier)
+    body: (block))
+  (method
+    visibility: (visibility)
+    modifier: (modifier)
+    name: (identifier)
     body: (block)))
 
 ===

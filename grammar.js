@@ -116,7 +116,7 @@ module.exports = grammar({
     module_method: $ => seq(
       'fn',
       field('visibility', optional($.visibility)),
-      field('modifier', optional(alias($.inline, $.modifier))),
+      field('modifier', optional(alias($._method_inline, $.modifier))),
       field('name', alias($.method_name, $.identifier)),
       field('type_parameters', optional($.type_parameters)),
       field('arguments', optional(alias($.method_arguments, $.arguments))),
@@ -150,20 +150,18 @@ module.exports = grammar({
       $.generic_type,
       alias($.constant, $.type),
     ),
-    _method_modifier: _ => choice(
+    _method_modifier: $ => choice(
+      $._method_modifier_keywords,
+      seq($._method_inline, optional($._method_modifier_keywords)),
+    ),
+    _method_modifier_keywords: _ => choice(
       'mut',
       'move',
       'static',
       'async',
       'async mut',
-      'inline',
-      'inline mut',
-      'inline move',
-      'inline static',
-      'inline async',
-      'inline async mut',
     ),
-
+    _method_inline: _ => choice('inline', 'noinline'),
     // Classes
     class: $ => seq(
       'type',

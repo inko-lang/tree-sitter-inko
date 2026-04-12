@@ -102,11 +102,20 @@ type A {
   fn pub async mut example {}
   fn pub move example {}
   fn example[A: B + C + mut + D[A]] {}
+
   fn inline example {}
   fn inline mut example {}
   fn inline move example {}
+  fn inline static example {}
   fn inline async example {}
   fn pub inline example {}
+
+  fn noinline example {}
+  fn noinline mut example {}
+  fn noinline move example {}
+  fn noinline static example {}
+  fn noinline async example {}
+  fn pub noinline example {}
 }
 
 ---
@@ -153,10 +162,40 @@ type A {
       (method modifier: (modifier) name: (identifier) body: (block))
       (method modifier: (modifier) name: (identifier) body: (block))
       (method
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        visibility: (visibility)
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
+        modifier: (modifier)
+        name: (identifier)
+        body: (block))
+      (method
         visibility: (visibility)
         modifier: (modifier)
         name: (identifier)
         body: (block)))))
+
 ===
 Classes with cases
 ===

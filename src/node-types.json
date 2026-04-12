@@ -10571,23 +10571,11 @@
     "named": false
   },
   {
-    "type": "inline async",
-    "named": false
-  },
-  {
-    "type": "inline async mut",
-    "named": false
-  },
-  {
     "type": "inline move",
     "named": false
   },
   {
     "type": "inline mut",
-    "named": false
-  },
-  {
-    "type": "inline static",
     "named": false
   },
   {
@@ -10634,6 +10622,10 @@
   {
     "type": "nil",
     "named": true
+  },
+  {
+    "type": "noinline",
+    "named": false
   },
   {
     "type": "or",

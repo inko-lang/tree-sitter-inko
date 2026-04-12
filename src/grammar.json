@@ -722,7 +722,7 @@
                 "type": "ALIAS",
                 "content": {
                   "type": "SYMBOL",
-                  "name": "inline"
+                  "name": "_method_inline"
                 },
                 "named": true,
                 "value": "modifier"
@@ -1154,6 +1154,36 @@
       "type": "CHOICE",
       "members": [
         {
+          "type": "SYMBOL",
+          "name": "_method_modifier_keywords"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_method_inline"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_method_modifier_keywords"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "_method_modifier_keywords": {
+      "type": "CHOICE",
+      "members": [
+        {
           "type": "STRING",
           "value": "mut"
         },
@@ -1172,30 +1202,19 @@
         {
           "type": "STRING",
           "value": "async mut"
-        },
+        }
+      ]
+    },
+    "_method_inline": {
+      "type": "CHOICE",
+      "members": [
         {
           "type": "STRING",
           "value": "inline"
         },
         {
           "type": "STRING",
-          "value": "inline mut"
-        },
-        {
-          "type": "STRING",
-          "value": "inline move"
-        },
-        {
-          "type": "STRING",
-          "value": "inline static"
-        },
-        {
-          "type": "STRING",
-          "value": "inline async"
-        },
-        {
-          "type": "STRING",
-          "value": "inline async mut"
+          "value": "noinline"
         }
       ]
     },
