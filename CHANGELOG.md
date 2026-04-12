@@ -1,6 +1,16 @@
 <!-- This changelog is managed by https://github.com/yorickpeterse/clogs -->
 # Changelog
 
+## 0.6.0 (2026-04-12)
+
+### Added
+
+- [Add support for the noinline keyword](https://github.com/inko-lang/inko/commit/490cf7b828df7e73f04d5e0f2aaa3b3e9be58dad)
+
+### Changed
+
+- [Remove queries/ directory](https://github.com/inko-lang/inko/commit/a843f42f51ebfb4ffcf776bab28c337dda3f33af)
+
 ## 0.5.1 (2026-01-09)
 
 ### Fixed
