@@ -8,10 +8,20 @@ Integers
 0xAB
 0xA_B
 -100
+0b11_01
+-0b11_01
 
 ---
 
-(source_file (integer) (integer) (integer) (integer) (integer) (integer))
+(source_file
+  (integer)
+  (integer)
+  (integer)
+  (integer)
+  (integer)
+  (integer)
+  (integer)
+  (integer))
 
 ===
 Floats

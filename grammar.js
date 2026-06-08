@@ -652,7 +652,13 @@ module.exports = grammar({
       // 1e+2
       /-?\d[\d_]*(e|E)(\+|-)?[\d_]+/,
     ),
-    integer: _ => /-?(0x[\da-fA-F_]+|\d[\d_]*)/,
+    integer: _ => choice(
+      // 123, 0xFF
+      /-?(0x[\da-fA-F_]+|\d[\d_]*)/,
+
+      // 0b11
+      /-?0b[01_]+/
+    ),
 
     // Strings
     string: $ => choice(

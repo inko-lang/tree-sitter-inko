@@ -5123,8 +5123,17 @@
       ]
     },
     "integer": {
-      "type": "PATTERN",
-      "value": "-?(0x[\\da-fA-F_]+|\\d[\\d_]*)"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "-?(0x[\\da-fA-F_]+|\\d[\\d_]*)"
+        },
+        {
+          "type": "PATTERN",
+          "value": "-?0b[01_]+"
+        }
+      ]
     },
     "string": {
       "type": "CHOICE",

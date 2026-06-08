@@ -6203,6 +6203,16 @@
     }
   },
   {
+    "type": "integer",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "integer_pattern",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "interpolation",
     "named": true,
     "fields": {},
@@ -10579,14 +10589,6 @@
     "named": false
   },
   {
-    "type": "integer",
-    "named": true
-  },
-  {
-    "type": "integer_pattern",
-    "named": true
-  },
-  {
     "type": "let",
     "named": false
   },
@@ -10677,11 +10679,11 @@
   },
   {
     "type": "type",
-    "named": false
+    "named": true
   },
   {
     "type": "type",
-    "named": true
+    "named": false
   },
   {
     "type": "uni",
