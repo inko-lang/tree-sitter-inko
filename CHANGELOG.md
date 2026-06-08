@@ -1,6 +1,12 @@
 <!-- This changelog is managed by https://github.com/yorickpeterse/clogs -->
 # Changelog
 
+## 0.7.0 (2026-06-08)
+
+### Added
+
+- [Add support for binary integer literals](https://github.com/inko-lang/inko/commit/0840909907f68df95341970978adb997aea676c5)
+
 ## 0.6.0 (2026-04-12)
 
 ### Added
