@@ -2622,6 +2622,16 @@
             "named": true
           }
         ]
+      },
+      "type_arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type_arguments",
+            "named": true
+          }
+        ]
       }
     }
   },
@@ -10679,11 +10689,11 @@
   },
   {
     "type": "type",
-    "named": true
+    "named": false
   },
   {
     "type": "type",
-    "named": false
+    "named": true
   },
   {
     "type": "uni",

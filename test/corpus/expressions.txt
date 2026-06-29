@@ -679,6 +679,10 @@ a.b?
 a?()
 A()
 foo?
+a[ref T]
+a.b[ref T]
+a[ref T](10)
+a.b[ref T](10)
 
 ---
 
@@ -713,7 +717,22 @@ foo?
   (call receiver: (identifier) name: (name))
   (call name: (name) arguments: (arguments))
   (call name: (name) arguments: (arguments))
-  (call name: (name)))
+  (call name: (name))
+  (call name: (name) type_arguments: (type_arguments (ref_type type: (type))))
+  (call
+    receiver: (identifier)
+    name: (name)
+    type_arguments: (type_arguments (ref_type type: (type))))
+  (call
+    name: (name)
+    type_arguments: (type_arguments (ref_type type: (type)))
+    arguments: (arguments (integer)))
+  (call
+    receiver: (identifier)
+    name: (name)
+    type_arguments: (type_arguments (ref_type type: (type)))
+    arguments: (arguments (integer)))
+    )
 
 ===
 Named arguments

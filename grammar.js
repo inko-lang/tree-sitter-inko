@@ -438,8 +438,21 @@ module.exports = grammar({
       seq(field('name', alias($.identifier_with_special, $.name))),
       seq(
         field('name', $._call_name),
+        field(
+          'type_arguments',
+          optional(alias($.call_type_arguments, $.type_arguments))
+        ),
         field('arguments', alias($.call_arguments, $.arguments)),
-      )
+      ),
+      seq(
+        field('name', $._call_name),
+        field('type_arguments', alias($.call_type_arguments, $.type_arguments)),
+      ),
+    ),
+    call_type_arguments: $ => seq(
+      token.immediate('['),
+      comma_list($._type),
+      ']',
     ),
     call_arguments: $ => seq(
       token.immediate('('),
@@ -461,6 +474,10 @@ module.exports = grammar({
         field('receiver', $._expression),
         '.',
         field('name', $._call_name),
+        field(
+          'type_arguments',
+          optional(alias($.call_type_arguments, $.type_arguments))
+        ),
         field('arguments', optional(alias($.call_arguments, $.arguments))),
       ),
     ),
