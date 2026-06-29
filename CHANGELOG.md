@@ -1,6 +1,12 @@
 <!-- This changelog is managed by https://github.com/yorickpeterse/clogs -->
 # Changelog
 
+## 0.8.0 (2026-06-29)
+
+### Added
+
+- [Support parsing of explicit type arguments](https://github.com/inko-lang/inko/commit/259f2f1e538971ae24aa85e1b0706c84d6dfd763)
+
 ## 0.7.0 (2026-06-08)
 
 ### Added
