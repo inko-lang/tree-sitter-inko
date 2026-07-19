@@ -16,6 +16,6 @@ permissions:
 
 jobs:
   release:
-    uses: tree-sitter/workflows/.github/workflows/release.yml@main
+    uses: tree-sitter/workflows/.github/workflows/release.yml@60bd84d53e833879f9734203a556bdad3ae50bb2
     with:
         attestations: true

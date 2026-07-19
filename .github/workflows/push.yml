@@ -25,10 +25,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: Set up tree-sitter
-        uses: tree-sitter/setup-action/cli@eeb902ac2f1be576edc296309872cf476a209b7f
+        uses: tree-sitter/setup-action/cli@1868a545ffb91bdc221d14a168b5b6d8de4a28b3
         with:
-          tree-sitter-ref: v0.25.10
+          tree-sitter-ref: v0.26.9
       - name: Run tests
-        uses: tree-sitter/parser-test-action@e9b2fecb014a7f8caa1a47316450d4e665132ed9
+        uses: tree-sitter/parser-test-action@05f6ce7c7e54603c45cd87ed926725dc870bcc63
         with:
           test-rust: ${{runner.os == 'Linux'}}
