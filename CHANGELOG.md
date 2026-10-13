@@ -1,6 +1,12 @@
 <!-- This changelog is managed by https://github.com/yorickpeterse/clogs -->
 # Changelog
 
+## 0.9.0 (2026-10-13)
+
+### Added
+
+- [Add support for the inline array syntax](https://github.com/inko-lang/inko/commit/b68f4322058f64ce1eeea59e5548c98b58e6be64)
+
 ## 0.8.0 (2026-06-29)
 
 ### Added
