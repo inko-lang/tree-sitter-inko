@@ -27,7 +27,7 @@ jobs:
       - name: Set up tree-sitter
         uses: tree-sitter/setup-action/cli@faab9a23fa6195da0f1cf868219cc1e89f238d3d
         with:
-          tree-sitter-ref: latest
+          tree-sitter-ref: v0.26.11
       - name: Run tests
         uses: tree-sitter/parser-test-action@05f6ce7c7e54603c45cd87ed926725dc870bcc63
         with:
