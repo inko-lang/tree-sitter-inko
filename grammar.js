@@ -490,7 +490,7 @@ module.exports = grammar({
     // Sequences
     grouped_expression: $ => seq('(', $._expression ,')'),
     tuple: $ => seq('(', $._expression, ',', comma_list($._expression), ')'),
-    array: $ => seq('[', comma_list($._expression), ']'),
+    array: $ => seq(optional('inline'), '[', comma_list($._expression), ']'),
 
     // Control flow
     return: $ => prec.right(seq(

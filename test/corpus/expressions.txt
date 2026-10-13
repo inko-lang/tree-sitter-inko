@@ -383,6 +383,26 @@ Arrays
   (array (integer) (integer))
   (array (integer) (integer)))
 
+
+===
+Inline arrays
+===
+
+inline []
+inline [10]
+inline [10,20]
+inline [10,20,]
+inline [10 * 2]
+
+---
+
+(source_file
+  (array)
+  (array (integer))
+  (array (integer) (integer))
+  (array (integer) (integer))
+  (array (binary (integer) (integer))))
+
 ===
 Control flow expressions
 ===
