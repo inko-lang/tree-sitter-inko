@@ -1,55 +1,55 @@
-<!-- This changelog is managed by https://github.com/yorickpeterse/clogs -->
+<!-- This changelog is managed by https://codeberg.org/yorickpeterse/clogs -->
 # Changelog
 
 ## 0.9.0 (2026-10-13)
 
 ### Added
 
-- [Add support for the inline array syntax](https://github.com/inko-lang/inko/commit/b68f4322058f64ce1eeea59e5548c98b58e6be64)
+- [Add support for the inline array syntax](https://codeberg.org/inko-lang/tree-sitter-inko/commit/b68f4322058f64ce1eeea59e5548c98b58e6be64)
 
 ## 0.8.0 (2026-06-29)
 
 ### Added
 
-- [Support parsing of explicit type arguments](https://github.com/inko-lang/inko/commit/259f2f1e538971ae24aa85e1b0706c84d6dfd763)
+- [Support parsing of explicit type arguments](https://codeberg.org/inko-lang/tree-sitter-inko/commit/259f2f1e538971ae24aa85e1b0706c84d6dfd763)
 
 ## 0.7.0 (2026-06-08)
 
 ### Added
 
-- [Add support for binary integer literals](https://github.com/inko-lang/inko/commit/0840909907f68df95341970978adb997aea676c5)
+- [Add support for binary integer literals](https://codeberg.org/inko-lang/tree-sitter-inko/commit/0840909907f68df95341970978adb997aea676c5)
 
 ## 0.6.0 (2026-04-12)
 
 ### Added
 
-- [Add support for the noinline keyword](https://github.com/inko-lang/inko/commit/490cf7b828df7e73f04d5e0f2aaa3b3e9be58dad)
+- [Add support for the noinline keyword](https://codeberg.org/inko-lang/tree-sitter-inko/commit/490cf7b828df7e73f04d5e0f2aaa3b3e9be58dad)
 
 ### Changed
 
-- [Remove queries/ directory](https://github.com/inko-lang/inko/commit/a843f42f51ebfb4ffcf776bab28c337dda3f33af)
+- [Remove queries/ directory](https://codeberg.org/inko-lang/tree-sitter-inko/commit/a843f42f51ebfb4ffcf776bab28c337dda3f33af)
 
 ## 0.5.1 (2026-01-09)
 
 ### Fixed
 
-- [Fix parsing of floats with exponents and decimals](https://github.com/inko-lang/inko/commit/245e64a5ae8abc01e32eb0d473560c7ca4c1ebe6)
+- [Fix parsing of floats with exponents and decimals](https://codeberg.org/inko-lang/tree-sitter-inko/commit/245e64a5ae8abc01e32eb0d473560c7ca4c1ebe6)
 
 ## 0.5.0 (2026-01-09)
 
 ### Added
 
-- [Add support for the `ref` type modifier](https://github.com/inko-lang/inko/commit/6f0d5b19a9aa9fe6321b3b3ba8de4e498a2b374c)
+- [Add support for the `ref` type modifier](https://codeberg.org/inko-lang/tree-sitter-inko/commit/6f0d5b19a9aa9fe6321b3b3ba8de4e498a2b374c)
 
 ### Fixed
 
-- [Fix parsing imports of symbols with question marks](https://github.com/inko-lang/inko/commit/f7f62f977bd7c724a22c393ae1676f276ecda7e4)
+- [Fix parsing imports of symbols with question marks](https://codeberg.org/inko-lang/tree-sitter-inko/commit/f7f62f977bd7c724a22c393ae1676f276ecda7e4)
 
 ## 0.4.0 (2025-12-06)
 
 ### Changed
 
-- [Change the structure of if expressions](https://github.com/inko-lang/inko/commit/40f98e9a6090de71a5c307f64ae621d648aaa013)
+- [Change the structure of if expressions](https://codeberg.org/inko-lang/tree-sitter-inko/commit/40f98e9a6090de71a5c307f64ae621d648aaa013)
 
 ## 0.3.1 (2025-12-06)
 

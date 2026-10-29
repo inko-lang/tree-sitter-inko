@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-inko
-        VERSION "0.2.0"
+        VERSION "0.9.0"
         DESCRIPTION "A parser for the Inko programming language"
-        HOMEPAGE_URL "https://github.com/inko-lang/tree-sitter-inko/"
+        HOMEPAGE_URL "https://codeberg.org/inko-lang/tree-sitter-inko/"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

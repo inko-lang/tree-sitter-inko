@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-inko
+module codeberg.org/inko-lang/tree-sitter-inko
 
 go 1.23
 

@@ -2,33 +2,20 @@ name: Push
 
 on:
   push:
-    branches:
-      - '**'
   pull_request:
+  workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
-  cancel-in-progress: true
+  group: ${{ forge.workflow }}-${{ forge.ref }}
+  cancel-in-progress: ${{ forge.event_name == 'pull_request' }}
 
 jobs:
   test:
-    name: Test parser
-    runs-on: ${{matrix.os}}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - macos-14
-          - ubuntu-latest
-          - windows-latest
+    name: Run tests
+    runs-on: home-linux-amd64
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-      - name: Set up tree-sitter
-        uses: tree-sitter/setup-action/cli@faab9a23fa6195da0f1cf868219cc1e89f238d3d
-        with:
-          tree-sitter-ref: v0.26.11
+      - uses: actions/checkout@v7
+      - name: Install dependencies
+        run: microdnf install --assumeyes tree-sitter-cli
       - name: Run tests
-        uses: tree-sitter/parser-test-action@05f6ce7c7e54603c45cd87ed926725dc870bcc63
-        with:
-          test-rust: ${{runner.os == 'Linux'}}
+        run: tree-sitter test

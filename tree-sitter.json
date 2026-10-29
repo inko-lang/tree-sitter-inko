@@ -14,7 +14,7 @@
     }
   ],
   "metadata": {
-    "version": "0.2.0",
+    "version": "0.9.0",
     "license": "MPL-2.0",
     "description": "A parser for the Inko programming language",
     "authors": [
@@ -24,7 +24,7 @@
       }
     ],
     "links": {
-      "repository": "https://github.com/inko-lang/tree-sitter-inko/",
+      "repository": "https://codeberg.org/inko-lang/tree-sitter-inko/",
       "funding": "https://github.com/sponsors/yorickpeterse"
     }
   },

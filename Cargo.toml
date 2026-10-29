@@ -1,12 +1,12 @@
 [package]
 name = "tree-sitter-inko"
 description = "Inko grammar for tree-sitter"
-version = "0.2.0"
+version = "0.9.0"
 license = "MPL-2.0"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "inko"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/inko-lang/tree-sitter-inko"
+repository = "https://codeberg.org/inko-lang/tree-sitter-inko"
 edition = "2021"
 autoexamples = false
 

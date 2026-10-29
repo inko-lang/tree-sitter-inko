@@ -3,6 +3,14 @@
 An [Inko](https://inko-lang.org/) grammar for
 [Tree-sitter](https://tree-sitter.github.io/tree-sitter/).
 
+## Release process
+
+For this you'll need to have [just](https://just.systems/) installed, then run:
+
+```bash
+just release MAJOR.MINOR.PATCH
+```
+
 ## License
 
 All source code in this repository is licensed under the Mozilla Public License
